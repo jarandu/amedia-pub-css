@@ -32,7 +32,9 @@
       <a href="https://{pub.URL}" target="_blank">
         <h2>{pub.Navn}</h2>
       </a>
-      <span>{pub["--newspaper-color"].toLowerCase()}</span>
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <!-- svelte-ignore a11y-no-static-element-interactions -->
+      <span on:click={(event) => { navigator.clipboard.writeText(pub["--newspaper-color"].toLowerCase()); }}>{pub["--newspaper-color"].toLowerCase()}</span>
       <div class="aside">
         {#if colorCheck(pub, "--custom-background-color-one")}<div style="background: {pub["--custom-background-color-one"]}; color: {pub["--custom-background-color-one-front"]}">1</div>{/if}
         {#if colorCheck(pub, "--custom-background-color-two")}<div style="background: {pub["--custom-background-color-two"]}; color: {pub["--custom-background-color-two-front"]}">2</div>{/if}
@@ -69,6 +71,8 @@
   }
   .pub {
     display: flex;
+    flex-direction: column;
+    gap: .1em;
     position: relative;
     min-width: 160px;
     height: 100px;
@@ -82,18 +86,28 @@
     text-decoration: none;
     color: inherit;
   }
+  a:hover {
+    text-decoration: underline;
+  }
+  span {
+    width: fit-content;
+  }
+  span:hover {
+    cursor: pointer;
+    background: white;
+    color: black; 
+  }
   h2 {
     font-size: 1.2em;
     font-weight: 500;
     margin: 0 0 5px 0;
   }
   .aside {
+    position: absolute;
+    bottom: 0;
+    right: 0;
     display: flex;
     gap: 5px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
     width: 100%;
     justify-content: flex-end;
     align-items: flex-end;
