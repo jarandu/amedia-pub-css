@@ -10,36 +10,66 @@
       URL: p.URL,
       ...attributes
     }
-  })
+  }).sort((a,b) => a.Navn.localeCompare(b.Navn))
+  const colorCheck = (obj, colorName) => {
+    let color = obj[colorName]
+    if (!color) return false
+    return ![
+      '#ffffff',
+      'rgb(255,255,255)',
+      'rgb(255, 255, 255)',
+      obj["--newspaper-color"].toLowerCase()
+    ].includes(color.toLowerCase())
+  }
 </script>
 
+<div class="info"><div>i</div><div>Viser tilpassede farger, med mindre den er hvit eller lik hovedfargen.</div></div>
 <div class="container">
   {#each merged as pub}
-    <a class="pub" href="https://{pub.URL}" target="_blank" style="
+    <div class="pub" style="
     background: {pub["--newspaper-color"]}; 
     color: {pub["--newspaper-color-inverted"]};">
-      <h2>{pub.Navn}</h2>
-      <span>{pub["--newspaper-color"]}</span>
+      <a href="https://{pub.URL}" target="_blank">
+        <h2>{pub.Navn}</h2>
+      </a>
+      <span>{pub["--newspaper-color"].toLowerCase()}</span>
       <div class="aside">
-        {#if pub["--custom-background-color-one"]}<div style="background: {pub["--custom-background-color-one"]}"></div>{/if}
-        {#if pub["--custom-background-color-two"]}<div style="background: {pub["--custom-background-color-two"]}"></div>{/if}
+        {#if colorCheck(pub, "--custom-background-color-one")}<div style="background: {pub["--custom-background-color-one"]}; color: {pub["--custom-background-color-one-front"]}">1</div>{/if}
+        {#if colorCheck(pub, "--custom-background-color-two")}<div style="background: {pub["--custom-background-color-two"]}; color: {pub["--custom-background-color-two-front"]}">2</div>{/if}
       </div>
-    </a>
+    </div>
   {/each}
 </div>
 
 <style>
+  .info {
+    padding: 1em;
+    display: flex;
+    gap: .5em;
+    align-items: center;
+  }
+  .info div:first-child {
+    display: inline-flex;
+    font-size: .9em;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+    min-width: 1.2em;
+    height: 1.2em;
+    line-height: 1;
+    border-radius: 50%;
+    color: white;
+    background-color: #333;
+  }
   .container {
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
     padding: 1em;
-    font-size: 14px;
   }
   .pub {
-    display: block;
+    display: flex;
     position: relative;
-    font-family: "National 2", national2;
     min-width: 160px;
     height: 100px;
     flex: 1;
@@ -47,7 +77,10 @@
     border-radius: 3px;
     word-wrap: break-word;
     hyphens: auto;
+  }
+  a {
     text-decoration: none;
+    color: inherit;
   }
   h2 {
     font-size: 1.2em;
@@ -67,10 +100,15 @@
     padding: 10px;
   }
   .aside div {
-    height: 20px;
-    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    width: 2em;
     border-radius: 50%;
     border: 1px solid white;
+    font-size: .8em;
+    line-height: 1;
   }
   
 </style>
