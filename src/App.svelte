@@ -13,6 +13,7 @@
     "FreestyleFolkeblad",
     "MinMenuett",
     "Oslodebatten",
+    "Polkaposten",
     "Rumbarapporten",
     "Vise"
   ]
