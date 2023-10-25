@@ -1,18 +1,51 @@
 <script>
   import css from "./assets/all.json"
+  import themes from "./assets/themes.json"
   let preventCopy
 
-  let merged = css.map(p => {
-    let attributes = p.CSS.reduce((flat, obj) => {
-      if (obj.name) flat[obj.name] = obj.value;
-      return flat;
-    }, {});
-    return {
-      Navn: p.Navn,
-      URL: p.URL,
-      ...attributes
+  const exclude = [
+    "Salsaposten",
+    "Tangotidende",
+    "Avisnavn",
+    "iVerdal",
+    "Finnmarken",
+    "Finnmark Dagblad",
+    "FreestyleFolkeblad",
+    "MinMenuett",
+    "Oslodebatten",
+    "Rumbarapporten",
+    "Vise"
+  ]
+
+  let sorted = "name"
+
+  const waysOfSorting = {
+    name: function (a,b) {
+      return a.Navn.localeCompare(b.Navn)
+    },
+    theme: function (a,b) {
+      return a.Theme.localeCompare(b.Theme)
     }
-  }).sort((a,b) => a.Navn.localeCompare(b.Navn))
+  }
+
+  $: merged = css
+    .filter(p => !exclude.includes(p.Navn))
+    .map(p => {
+      let attributes = p.CSS.reduce((flat, obj) => {
+        if (obj.name) flat[obj.name] = obj.value;
+        return flat;
+      }, {});
+      let theme = themes.find(site => p.URL == site.URL).Theme
+      return {
+        Navn: p.Navn,
+        URL: p.URL,
+        Theme: theme,
+        ...attributes
+      }
+    })
+    .sort(waysOfSorting[sorted])
+  
+  $: console.log(merged)
   
   const colorCheck = (obj, colorName) => {
     let color = obj[colorName]
@@ -39,26 +72,17 @@
     }, 1500)
   }
 
-  const exclude = [
-    "Salsaposten",
-    "Tangotidende",
-    "Avisnavn",
-    "iVerdal",
-    "Finnmarken",
-    "Finnmark Dagblad",
-    "FreestyleFolkeblad",
-    "MinMenuett",
-    "Oslodebatten",
-    "Rumbarapporten",
-    "Vise"
-  ]
-
 </script>
 
-<div class="info"><div>i</div><div>Viser tilpassede farger, med mindre den er hvit eller lik hovedfargen. {merged.length - exclude.length} publikasjoner i lista.</div></div>
+<div class="info">
+  <div>i</div>
+  <div>{merged.length} publikasjoner i lista, sortert på <select bind:value={sorted}><option value="name">navn</option><option value="theme">tema</option></select>. Viser tilpassede farger, med mindre den er hvit eller lik hovedfargen.</div>
+</div>
 <div class="container">
-  {#each merged as pub}
-    {#if !exclude.includes(pub.Navn)}
+  {#each merged as pub,i}
+    {#if sorted == "theme" && (pub.Theme != merged[i-1]?.Theme || i == 0)}
+    <div class=divider>{pub.Theme}</div>
+    {/if}
     <div class="pub" style="
     background: {pub["--newspaper-color"]}; 
     color: {pub["--newspaper-color-inverted"]};">
@@ -69,11 +93,11 @@
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <span on:click={(e) => { if (!preventCopy) copy(e) }}>{pub["--newspaper-color"].toLowerCase()}</span>
       <div class="aside">
+        {#if sorted != "theme"}<div style="background: transparent; border-style: dotted;">{pub.Theme.substring(0,1).toUpperCase()}</div>{/if}
         {#if colorCheck(pub, "--custom-background-color-one")}<div style="background: {pub["--custom-background-color-one"]}; color: {pub["--custom-background-color-one-front"]}">1</div>{/if}
         {#if colorCheck(pub, "--custom-background-color-two")}<div style="background: {pub["--custom-background-color-two"]}; color: {pub["--custom-background-color-two-front"]}">2</div>{/if}
       </div>
     </div>
-    {/if}
   {/each}
 </div>
 
@@ -97,11 +121,22 @@
     color: white;
     background-color: #333;
   }
+  select {
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: inherit;
+  }
   .container {
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
     padding: 1em;
+  }
+  .divider {
+    width: 100%;
+    font-size: 1.6em;
+    margin-top: 1em;
+    font-weight: 500;
   }
   .pub {
     display: flex;
@@ -109,6 +144,7 @@
     gap: .1em;
     position: relative;
     min-width: 160px;
+    max-width: 246.5px;
     height: 100px;
     flex: 1;
     padding: 1em;
