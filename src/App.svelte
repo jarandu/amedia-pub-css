@@ -1,5 +1,7 @@
 <script>
   import css from "./assets/all.json"
+  let preventCopy
+
   let merged = css.map(p => {
     let attributes = p.CSS.reduce((flat, obj) => {
       if (obj.name) flat[obj.name] = obj.value;
@@ -11,6 +13,7 @@
       ...attributes
     }
   }).sort((a,b) => a.Navn.localeCompare(b.Navn))
+  
   const colorCheck = (obj, colorName) => {
     let color = obj[colorName]
     if (!color) return false
@@ -21,11 +24,41 @@
       obj["--newspaper-color"].toLowerCase()
     ].includes(color.toLowerCase())
   }
+
+  const copy = (event) => {
+    let el = event.target
+    let origValue = el.innerText
+    navigator.clipboard.writeText(origValue)
+    el.innerText = "Kopiert!"
+    preventCopy = true
+    el.classList.add("no-deco")
+    setTimeout(() => { 
+      preventCopy = false
+      el.innerText = origValue 
+      el.classList.remove("no-deco")
+    }, 1500)
+  }
+
+  const exclude = [
+    "Salsaposten",
+    "Tangotidende",
+    "Avisnavn",
+    "iVerdal",
+    "Finnmarken",
+    "Finnmark Dagblad",
+    "FreestyleFolkeblad",
+    "MinMenuett",
+    "Oslodebatten",
+    "Rumbarapporten",
+    "Vise"
+  ]
+
 </script>
 
-<div class="info"><div>i</div><div>Viser tilpassede farger, med mindre den er hvit eller lik hovedfargen.</div></div>
+<div class="info"><div>i</div><div>Viser tilpassede farger, med mindre den er hvit eller lik hovedfargen. {merged.length - exclude.length} publikasjoner i lista.</div></div>
 <div class="container">
   {#each merged as pub}
+    {#if !exclude.includes(pub.Navn)}
     <div class="pub" style="
     background: {pub["--newspaper-color"]}; 
     color: {pub["--newspaper-color-inverted"]};">
@@ -34,12 +67,13 @@
       </a>
       <!-- svelte-ignore a11y-click-events-have-key-events -->
       <!-- svelte-ignore a11y-no-static-element-interactions -->
-      <span on:click={(event) => { navigator.clipboard.writeText(pub["--newspaper-color"].toLowerCase()); }}>{pub["--newspaper-color"].toLowerCase()}</span>
+      <span on:click={(e) => { if (!preventCopy) copy(e) }}>{pub["--newspaper-color"].toLowerCase()}</span>
       <div class="aside">
         {#if colorCheck(pub, "--custom-background-color-one")}<div style="background: {pub["--custom-background-color-one"]}; color: {pub["--custom-background-color-one-front"]}">1</div>{/if}
         {#if colorCheck(pub, "--custom-background-color-two")}<div style="background: {pub["--custom-background-color-two"]}; color: {pub["--custom-background-color-two-front"]}">2</div>{/if}
       </div>
     </div>
+    {/if}
   {/each}
 </div>
 
@@ -92,7 +126,7 @@
   span {
     width: fit-content;
   }
-  span:hover {
+  span:not(.no-deco):hover {
     cursor: pointer;
     background: white;
     color: black; 
@@ -101,6 +135,7 @@
     font-size: 1.2em;
     font-weight: 500;
     margin: 0 0 5px 0;
+    font-family: var(--article--fonts-title);
   }
   .aside {
     position: absolute;
@@ -108,7 +143,7 @@
     right: 0;
     display: flex;
     gap: 5px;
-    width: 100%;
+    min-width: fit-content;
     justify-content: flex-end;
     align-items: flex-end;
     padding: 10px;

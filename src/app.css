@@ -6,3 +6,167 @@ body {
   margin: 0;
   font-size: 14px;
 }
+
+/* Fonter */
+
+/* National2 */
+
+@font-face {
+  font-family: 'National2';
+  src: url('https://assets.acdn.no/pkg/@amedia/brick-fonts/1.5.0/fonts/alfa/national-2-light.woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'National2';
+  src: url('https://assets.acdn.no/pkg/@amedia/brick-fonts/1.5.0/fonts/alfa/national-2-regular.woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'National2';
+  src: url('https://assets.acdn.no/pkg/@amedia/brick-fonts/1.5.0/fonts/alfa/national-2-regular-italic.woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'National2';
+  src: url('https://assets.acdn.no/pkg/@amedia/brick-fonts/1.5.0/fonts/alfa/national-2-medium.woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'National2';
+  src: url('https://assets.acdn.no/pkg/@amedia/brick-fonts/1.5.0/fonts/alfa/national-2-medium-italic.woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'National2';
+  src: url('https://assets.acdn.no/pkg/@amedia/brick-fonts/1.5.0/fonts/alfa/national-2-bold.woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* National2 Narrow */
+
+@font-face {
+  font-family: 'National2 Narrow';
+  src: url('https://assets.acdn.no/pkg/@amedia/brick-fonts/1.5.0/fonts/alfa/national-2-narrow-regular.woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'National2 Narrow';
+  src: url('https://assets.acdn.no/pkg/@amedia/brick-fonts/1.5.0/fonts/alfa/national-2-narrow-bold.woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'National2 Narrow';
+  src: url('https://assets.acdn.no/pkg/@amedia/brick-fonts/1.5.0/fonts/alfa/national-2-narrow-extrabold.woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* FaktorTittel */
+
+@font-face {
+  font-family: 'FaktorTittel';
+  src: url('https://assets.acdn.no/pkg/@amedia/brick-fonts/1.5.0/fonts/nettavisen/FaktorSansDisplay-Regular.woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'FaktorTittel';
+  src: url('https://assets.acdn.no/pkg/@amedia/brick-fonts/1.5.0/fonts/nettavisen/FaktorSansDisplay-Medium.woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'FaktorTittel';
+  src: url('https://assets.acdn.no/pkg/@amedia/brick-fonts/1.5.0/fonts/nettavisen/FaktorSansDisplay-Black.woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: auto;
+}
+
+/* FaktorSans */
+
+@font-face {
+  font-family: 'FaktorSans';
+  src: url('https://assets.acdn.no/pkg/@amedia/brick-fonts/1.5.0/fonts/nettavisen/FaktorSans-Regular.woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'FaktorSans';
+  src: url('https://assets.acdn.no/pkg/@amedia/brick-fonts/1.5.0/fonts/nettavisen/FaktorSans-Bold.woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'FaktorSans';
+  src: url('https://assets.acdn.no/pkg/@amedia/brick-fonts/1.5.0/fonts/nettavisen/FaktorSans-RegularItalic.woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: auto;
+}
+
+/* FaktorSerif */
+
+@font-face {
+  font-family: 'FaktorSerif';
+  src: url('https://assets.acdn.no/pkg/@amedia/brick-fonts/1.5.0/fonts/nettavisen/FaktorSerif-Regular.woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'FaktorSerif';
+  src: url('https://assets.acdn.no/pkg/@amedia/brick-fonts/1.5.0/fonts/nettavisen/FaktorSerif-RegularItalic.woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'FaktorSerif';
+  src: url('https://assets.acdn.no/pkg/@amedia/brick-fonts/1.5.0/fonts/nettavisen/FaktorSerif-Bold.woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'FaktorSerif';
+  src: url('https://assets.acdn.no/pkg/@amedia/brick-fonts/1.5.0/fonts/nettavisen/FaktorSerif-BoldItalic.woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: auto;
+}
