@@ -1,10 +1,49 @@
 * {
   box-sizing: border-box;
-  font-family: "National 2", national2;
 }
 body {
   margin: 0;
   font-size: 14px;
+}
+body, select {
+  font-family: "National 2", national2;
+}
+
+/* General */
+
+.alfa-theme {
+  --article--fonts-title: National2 Narrow;
+  --article--fonts-secondary: Open Sans;
+  --article--fonts-tertiary: Open Sans
+}
+
+.charlie-theme {
+  --article--fonts-title: Tiempos Headline;
+  --article--fonts-secondary: Open Sans;
+  --article--fonts-teriary: Open Sans
+}
+
+.nettavisen-theme {
+  --article--fonts-title: FaktorTittel, Arial, sans-serif;
+  --article--fonts-secondary: FaktorSans, Helvetica, Arial, sans-serif;
+  --article--fonts-tertiary: FaktorSerif, Helvetica, Arial, sans-serif;
+  --article--colors-articlePageBg: #E5E5E5
+}
+
+.bravo-theme {
+  --article--fonts-title: National2, Helvetica, Arial, sans-serif;
+  --article--fonts-secondary: Open Sans;
+  --article--fonts-tertiary: Open Sans;
+  --article--colors-articlePageBg: #fff
+}
+
+.altno-theme {
+  --article--fonts-title: ALT Rund Text, Poppins, sans-serif;
+  --article--fonts-secondary: Crimson Pro, Georgia, serif;
+  --article--fonts-tertiary: ALT Rund Text, Poppins, sans-serif;
+  --article--fonts-leadText: Crimson Pro, Georgia, serif;
+  --article--fonts-display: ALT Rund Display, Poppins, sans-serif;
+  --article--colors-articlePageBg: #f4efe9
 }
 
 /* Fonter */

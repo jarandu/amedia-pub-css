@@ -83,7 +83,7 @@
     {#if sorted == "theme" && (pub.Theme != merged[i-1]?.Theme || i == 0)}
     <div class=divider>{pub.Theme}</div>
     {/if}
-    <div class="pub" style="
+    <div class="pub {pub.Theme}-theme" style="
     background: {pub["--newspaper-color"]}; 
     color: {pub["--newspaper-color-inverted"]};">
       <a href="https://{pub.URL}" target="_blank">
@@ -144,7 +144,7 @@
     gap: .1em;
     position: relative;
     min-width: 160px;
-    max-width: 246.5px;
+    max-width: 380px;
     height: 100px;
     flex: 1;
     padding: 1em;
@@ -169,7 +169,6 @@
   }
   h2 {
     font-size: 1.2em;
-    font-weight: 500;
     margin: 0 0 5px 0;
     font-family: var(--article--fonts-title);
   }
