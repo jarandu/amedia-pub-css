@@ -29,14 +29,14 @@
     }
   }
 
-  $: merged = css
+  $: merged = css.publications
     .filter(p => !exclude.includes(p.Navn))
     .map(p => {
       let attributes = p.CSS.reduce((flat, obj) => {
         if (obj.name) flat[obj.name] = obj.value;
         return flat;
       }, {});
-      let theme = themes.find(site => p.URL == site.URL).Theme
+      let theme = themes.sites.find(site => p.URL == site.URL).Theme
       return {
         Navn: p.Navn,
         URL: p.URL,
@@ -73,16 +73,24 @@
     }, 1500)
   }
 
+  const getDate = (date) => {
+    let d = new Date(date)
+    return d.toLocaleString('nb-NO', { month: 'short', year: 'numeric', day: 'numeric' })
+  }
+  
+
+
 </script>
 
 <div class="info">
   <div>i</div>
-  <div>{merged.length} publikasjoner i lista, sortert på <select bind:value={sorted}><option value="name">navn</option><option value="theme">tema</option></select>. Viser tilpassede farger, med mindre den er hvit eller lik hovedfargen.</div>
+  <div>{merged.length} publikasjoner i lista, sortert på <select bind:value={sorted}><option value="name">navn</option><option value="theme">tema</option></select>. Viser tilpassede farger, med mindre den er hvit eller lik hovedfargen. Tema oppdatert {getDate(themes.updated)}. CSS oppdatert {getDate(css.updated)}</div>
 </div>
 <div class="container">
   {#each merged as pub,i}
     {#if sorted == "theme" && (pub.Theme != merged[i-1]?.Theme || i == 0)}
-    <div class=divider>{pub.Theme}</div>
+    {@const count = merged.filter(p => p.Theme == pub.Theme).length}
+    <div class=divider>{pub.Theme} ({count} publikasjon{count > 1 ? "er" : ""})</div>
     {/if}
     <div class="pub {pub.Theme}-theme" style="
     background: {pub["--newspaper-color"]}; 
@@ -144,7 +152,7 @@
     flex-direction: column;
     gap: .1em;
     position: relative;
-    min-width: 160px;
+    min-width: 180px;
     max-width: 380px;
     height: 100px;
     flex: 1;
