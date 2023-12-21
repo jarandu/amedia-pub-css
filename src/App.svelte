@@ -32,16 +32,16 @@
   $: merged = css.publications
     .filter(p => !exclude.includes(p.Navn))
     .map(p => {
-      let attributes = p.CSS.reduce((flat, obj) => {
-        if (obj.name) flat[obj.name] = obj.value;
-        return flat;
-      }, {});
+      // let attributes = p.CSS.reduce((flat, obj) => {
+      //   if (obj.name) flat[obj.name] = obj.value;
+      //   return flat;
+      // }, {});
       let theme = themes.sites.find(site => p.URL == site.URL).Theme
       return {
         Navn: p.Navn,
         URL: p.URL,
         Theme: theme,
-        ...attributes
+        Attributes: p.CSS
       }
     })
     .sort(waysOfSorting[sorted])
@@ -55,7 +55,7 @@
       '#ffffff',
       'rgb(255,255,255)',
       'rgb(255, 255, 255)',
-      obj["--newspaper-color"].toLowerCase()
+      obj["newspaper-color"].toLowerCase()
     ].includes(color.toLowerCase())
   }
 
@@ -93,18 +93,18 @@
     <div class=divider>{pub.Theme} ({count} publikasjon{count > 1 ? "er" : ""})</div>
     {/if}
     <div class="pub {pub.Theme}-theme" style="
-    background: {pub["--newspaper-color"]}; 
-    color: {pub["--newspaper-color-inverted"]};">
+    background: {pub.Attributes["newspaper-color"]}; 
+    color: {pub.Attributes["newspaper-color-inverted"]};">
       <a href="https://{pub.URL}" target="_blank">
         <h2>{pub.Navn}</h2>
       </a>
       <!-- svelte-ignore a11y-click-events-have-key-events -->
       <!-- svelte-ignore a11y-no-static-element-interactions -->
-      <span on:click={(e) => { if (!preventCopy) copy(e) }}>{pub["--newspaper-color"].toLowerCase()}</span>
+      <span on:click={(e) => { if (!preventCopy) copy(e) }}>{pub.Attributes["newspaper-color"].toLowerCase()}</span>
       <div class="aside">
         {#if sorted != "theme"}<div style="background: transparent; border-style: dotted;">{pub.Theme.substring(0,1).toUpperCase()}</div>{/if}
-        {#if colorCheck(pub, "--custom-background-color-one")}<div style="background: {pub["--custom-background-color-one"]}; color: {pub["--custom-background-color-one-front"]}">1</div>{/if}
-        {#if colorCheck(pub, "--custom-background-color-two")}<div style="background: {pub["--custom-background-color-two"]}; color: {pub["--custom-background-color-two-front"]}">2</div>{/if}
+        {#if colorCheck(pub.Attributes, "custom-background-color-one")}<div style="background: {pub.Attributes["custom-background-color-one"]}; color: {pub.Attributes["custom-background-color-one-front"]}">1</div>{/if}
+        {#if colorCheck(pub.Attributes, "custom-background-color-two")}<div style="background: {pub.Attributes["custom-background-color-two"]}; color: {pub.Attributes["custom-background-color-two-front"]}">2</div>{/if}
       </div>
     </div>
   {/each}
