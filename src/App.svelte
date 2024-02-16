@@ -105,6 +105,7 @@
         {#if sorted != "theme"}<div style="background: transparent; border-style: dotted;">{pub.Theme.substring(0,1).toUpperCase()}</div>{/if}
         {#if colorCheck(pub.Attributes, "custom-background-color-one")}<div style="background: {pub.Attributes["custom-background-color-one"]}; color: {pub.Attributes["custom-background-color-one-front"]}">1</div>{/if}
         {#if colorCheck(pub.Attributes, "custom-background-color-two")}<div style="background: {pub.Attributes["custom-background-color-two"]}; color: {pub.Attributes["custom-background-color-two-front"]}">2</div>{/if}
+        <!-- {#if colorCheck(pub.Attributes, "custom-background-color-three")}<div style="background: {pub.Attributes["custom-background-color-three"]}; color: {pub.Attributes["custom-background-color-three-front"]}">3</div>{/if} -->
       </div>
     </div>
   {/each}
