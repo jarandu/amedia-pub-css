@@ -1,52 +1,21 @@
 <script>
-  import css from "./assets/all.json"
-  import themes from "./assets/themes.json"
+  import { onMount } from "svelte";
+
+  let data
+  let publications = []
   let preventCopy
-
-  const exclude = [
-    "Salsaposten",
-    "Tangotidende",
-    "Avisnavn",
-    "iVerdal",
-    "Finnmarken",
-    "Finnmark Dagblad",
-    "FreestyleFolkeblad",
-    "MinMenuett",
-    "Oslodebatten",
-    "Polkaposten",
-    "Rumbarapporten",
-    "Vise"
-  ]
-
   let sorted = "name"
 
   const waysOfSorting = {
     name: function (a,b) {
-      return a.Navn.localeCompare(b.Navn)
+      return a.name.localeCompare(b.name)
     },
     theme: function (a,b) {
-      return a.Theme.localeCompare(b.Theme)
+      return a.theme.localeCompare(b.theme)
     }
   }
 
-  $: merged = css.publications
-    .filter(p => !exclude.includes(p.Navn))
-    .map(p => {
-      // let attributes = p.CSS.reduce((flat, obj) => {
-      //   if (obj.name) flat[obj.name] = obj.value;
-      //   return flat;
-      // }, {});
-      let theme = themes.sites.find(site => p.URL == site.URL).Theme
-      return {
-        Navn: p.Navn,
-        URL: p.URL,
-        Theme: theme,
-        Attributes: p.CSS
-      }
-    })
-    .sort(waysOfSorting[sorted])
-  
-  $: console.log(merged)
+  $: if (data) publications = data.publications.sort(waysOfSorting[sorted])
   
   const colorCheck = (obj, colorName) => {
     let color = obj[colorName]
@@ -77,39 +46,60 @@
     let d = new Date(date)
     return d.toLocaleString('nb-NO', { month: 'short', year: 'numeric', day: 'numeric' })
   }
-  
 
+  onMount(async () => {
+    const fields = [
+      "newspaper-color",
+      "newspaper-color-inverted",
+      "custom-background-color-one",
+      "custom-background-color-one-front",
+      "custom-background-color-two",
+      "custom-background-color-two-front",
+      "custom-background-color-three",
+      "custom-background-color-three-front"
+    ]
+    const url = './api/get?fields=' + fields.join(',')
+    const res = await fetch(url)
+    if (res.ok) data = await res.json()
+  })
+
+  $: console.log(publications)
 
 </script>
 
+{#if publications.length}
 <div class="info">
   <div>i</div>
-  <div>{merged.length} publikasjoner i lista, sortert på <select bind:value={sorted}><option value="name">navn</option><option value="theme">tema</option></select>. Viser tilpassede farger, med mindre den er hvit eller lik hovedfargen. Tema oppdatert {getDate(themes.updated)}. CSS oppdatert {getDate(css.updated)}</div>
+  <div>{publications.length} publikasjoner i lista, sortert på <select bind:value={sorted}><option value="name">navn</option><option value="theme">tema</option></select>. Viser tilpassede farger, med mindre den er hvit eller lik hovedfargen. Tema oppdatert {getDate(data.updated)}.</div>
 </div>
 <div class="container">
-  {#each merged as pub,i}
-    {#if sorted == "theme" && (pub.Theme != merged[i-1]?.Theme || i == 0)}
-    {@const count = merged.filter(p => p.Theme == pub.Theme).length}
-    <div class=divider>{pub.Theme} ({count} publikasjon{count > 1 ? "er" : ""})</div>
+  {#each publications as pub,i}
+    {#if sorted == "theme" && (pub.theme != publications[i-1]?.theme || i == 0)}
+    {@const count = publications.filter(p => p.theme == pub.theme).length}
+    <div class=divider>{pub.theme} ({count} publikasjon{count > 1 ? "er" : ""})</div>
     {/if}
-    <div class="pub {pub.Theme}-theme" style="
-    background: {pub.Attributes["newspaper-color"]}; 
-    color: {pub.Attributes["newspaper-color-inverted"]};">
-      <a href="https://{pub.URL}" target="_blank">
-        <h2>{pub.Navn}</h2>
+    <div class="pub {pub.theme}-theme" style="background: {pub.css["newspaper-color"]}; color: {pub.css["newspaper-color-inverted"]};">
+      <a href="https://{pub.url}" target="_blank">
+        <h2>{pub.name}</h2>
       </a>
       <!-- svelte-ignore a11y-click-events-have-key-events -->
       <!-- svelte-ignore a11y-no-static-element-interactions -->
-      <span on:click={(e) => { if (!preventCopy) copy(e) }}>{pub.Attributes["newspaper-color"].toLowerCase()}</span>
+      <span on:click={(e) => { if (!preventCopy) copy(e) }}>{pub.css["newspaper-color"].toLowerCase()}</span>
       <div class="aside">
-        {#if sorted != "theme"}<div style="background: transparent; border-style: dotted;">{pub.Theme.substring(0,1).toUpperCase()}</div>{/if}
-        {#if colorCheck(pub.Attributes, "custom-background-color-one")}<div style="background: {pub.Attributes["custom-background-color-one"]}; color: {pub.Attributes["custom-background-color-one-front"]}">1</div>{/if}
-        {#if colorCheck(pub.Attributes, "custom-background-color-two")}<div style="background: {pub.Attributes["custom-background-color-two"]}; color: {pub.Attributes["custom-background-color-two-front"]}">2</div>{/if}
-        <!-- {#if colorCheck(pub.Attributes, "custom-background-color-three")}<div style="background: {pub.Attributes["custom-background-color-three"]}; color: {pub.Attributes["custom-background-color-three-front"]}">3</div>{/if} -->
+        {#if sorted != "theme"}<div style="background: transparent; border-style: dotted;">{pub.theme.substring(0,1).toUpperCase()}</div>{/if}
+        {#if colorCheck(pub.css, "custom-background-color-one")}<div style="background: {pub.css["custom-background-color-one"]}; color: {pub.css["custom-background-color-one-front"]}">1</div>{/if}
+        {#if colorCheck(pub.css, "custom-background-color-two")}<div style="background: {pub.css["custom-background-color-two"]}; color: {pub.css["custom-background-color-two-front"]}">2</div>{/if}
+        <!-- {#if colorCheck(pub.css, "custom-background-color-three")}<div style="background: {pub.css["custom-background-color-three"]}; color: {pub.css["custom-background-color-three-front"]}">3</div>{/if} -->
       </div>
     </div>
   {/each}
 </div>
+{:else}
+  <div>Hei! Bare sitt i ro, du. Laster inn tema og css-variabler. Tar cirka 10 sek.</div>
+  <div class="loading">
+    <div></div>
+  </div>
+{/if}
 
 <style>
   .info {
@@ -153,8 +143,8 @@
     flex-direction: column;
     gap: .1em;
     position: relative;
-    min-width: 180px;
-    max-width: 380px;
+    min-width: 300px;
+    max-width: 100%;
     height: 100px;
     flex: 1;
     padding: 1em;
@@ -178,7 +168,7 @@
     color: black; 
   }
   h2 {
-    font-size: 1.2em;
+    font-size: 1.25em;
     margin: 0 0 5px 0;
     font-family: var(--article--fonts-title);
   }
@@ -203,6 +193,21 @@
     border: 1px solid white;
     font-size: .8em;
     line-height: 1;
+  }
+
+  .loading {
+    border: 2px solid #333;
+    padding: 2px;
+  }
+  .loading div {
+    width: 0;
+    height: 10px;
+    background-color: rgb(9, 135, 224);
+    animation: loading 10s;
+  }
+  @keyframes loading {
+    0% { width: 0; }
+    100% { width: 100%; }
   }
   
 </style>

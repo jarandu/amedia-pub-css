@@ -1,18 +1,34 @@
 const cssBaseUrl = "https://services.api.no/api/css-config/v1/css-publication-vars?json=true&publication="
 const siteConfigUrl = "https://varnish-local.api.no/gaia/api/public/v1/siteconfig?status=active"
 
+const exclude = [
+  "Salsaposten",
+  "Tangotidende",
+  "Avisnavn",
+  "iVerdal",
+  "Finnmarken",
+  "Finnmark Dagblad",
+  "FreestyleFolkeblad",
+  "MinMenuett",
+  "Oslodebatten",
+  "Polkaposten",
+  "Rumbarapporten",
+  "Vise"
+]
+
 const getSites = async () => {
   try {
     const getSites = await fetch(siteConfigUrl);
     const sites = await getSites.json();
+    console.log("Got " + sites.length + " sites from siteconfig.")
     const filtered = sites
-      .filter((site) => site.config.theme !== undefined)
+      .filter((site) => site.config.hasOwnProperty("theme") && !exclude.includes(site.name.full))
       .map(site => ({
         name: site.name.full,
         url: site.domains.main,
         theme: site.config.theme
       }));
-    console.log("Got " + filtered.length + " sites from siteconfig.")
+    console.log("Filtered out " + (sites.length - filtered.length) + " sites.")
     return filtered;
   } catch (error) {
     console.log(`Error fetchSites: ${error}`);
@@ -20,9 +36,9 @@ const getSites = async () => {
   }
 }
 
-const getCSS = async (publications) => {
+const getCSS = async (publications, fields = []) => {
   let delay = 0;
-  Promise.all(publications.map((p, i) => {
+  const x = await Promise.all(publications.map((p, i) => {
     delay += 50;
     return new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -37,19 +53,28 @@ const getCSS = async (publications) => {
     });
   }))
   .then(finished => {
+    console.log("Finished:", finished.length)
     let pubs = publications.map((p,i) => {
-      p.css = finished[i]
+      if (!fields.length) p.css = finished[i]
+      else {
+        p.css = {}
+        for (const field of fields) {
+          p.css[field] = finished[i][field]
+        }
+      }
       return p
     })
     let output = {
       updated: new Date().toISOString(),
-      publications: pubs
+      publications: pubs,
+      filteredOut: exclude
     }
     return output;
   })
+  return x;
 }
 
-export const maxDuration = 60;
+export const maxDuration = 60; // 1 minute
 export default async (req, res) => {
 
   /* SERVER */
@@ -61,13 +86,18 @@ export default async (req, res) => {
   res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version')
 
   // Enable cache
-  res.setHeader('Cache-Control', 's-maxage=3600') // 1 hour
+  res.setHeader('Cache-Control', 's-maxage=259200') // 72 hours
 
+  const fields = req.query.fields ? req.query.fields.split(",") : []
+
+  let start = performance.now();
   const sites = await getSites()
   if (sites.length > 0) {
-    const output = await getCSS(sites)
-    if (output)
-      res.status(200).json(output);
+    const output = await getCSS(sites, fields)
+    if (output) {
+      console.log("Updated in", (performance.now() - start).toFixed(0), "ms")
+      res.status(200).send(output);
+    }
   }
   else
     res.status(500).send(`Error fetchSites: ${error}`);
