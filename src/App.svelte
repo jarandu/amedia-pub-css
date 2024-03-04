@@ -36,6 +36,7 @@
     }
     return ![
       '#ffffff',
+      '#dcd8d8',
       'rgb(255,255,255)',
       'rgb(255, 255, 255)',
       obj["newspaper-color"].toLowerCase()
@@ -87,7 +88,7 @@
 {#if publications.length}
 <div class="info">
   <div>i</div>
-  <div>{publications.length} publikasjoner i lista, sortert på <select bind:value={sorted}><option value="name">navn</option><option value="theme">tema</option></select>. Viser tilpassede farger, med mindre den er hvit eller lik hovedfargen. Tema oppdatert {getDate(data.updated)}.</div>
+  <div>{publications.length} publikasjoner i lista, sortert på <select bind:value={sorted}><option value="name">navn</option><option value="theme">tema</option></select>. Viser tilpassede farger, med mindre den er a) hvit, b) default-grå, eller c) lik hovedfargen. Tema oppdatert {getDate(data.updated)}.</div>
 </div>
 <div class="container">
   {#each publications as pub,i}
@@ -104,10 +105,10 @@
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <span on:click={(e) => { if (!preventCopy) copy(e) }}>{pub.css["newspaper-color"].toLowerCase()}</span>
       <div class="aside">
-        {#if colorCheck(pub.css, "custom-background-color-one")}<div style="background: {pub.css["custom-background-color-one"]}; color: {pub.css["custom-background-color-one-front"]}">1</div>{/if}
-        {#if colorCheck(pub.css, "custom-background-color-two")}<div style="background: {pub.css["custom-background-color-two"]}; color: {pub.css["custom-background-color-two-front"]}">2</div>{/if}
-        {#if colorCheck(pub.css, "custom-background-color-three")}<div style="background: {pub.css["custom-background-color-three"]}; color: {pub.css["custom-background-color-three-front"]}">3</div>{/if}
-        {#if colorCheck(pub.css, "opinion-background-color")}<div style="background: {pub.css["opinion-background-color"]}; color: {pub.css["opinion-color-front"]}">O</div>{/if}
+        <div class:warning={!colorCheck(pub.css, "custom-background-color-one")} style="background: {pub.css["custom-background-color-one"]}; color: {pub.css["custom-background-color-one-front"]}">1</div>
+        <div class:warning={!colorCheck(pub.css, "custom-background-color-two")} style="background: {pub.css["custom-background-color-two"]}; color: {pub.css["custom-background-color-two-front"]}">2</div>
+        <div class:warning={!colorCheck(pub.css, "custom-background-color-three")} style="background: {pub.css["custom-background-color-three"]}; color: {pub.css["custom-background-color-three-front"]}">3</div>
+        <div class:warning={!colorCheck(pub.css, "opinion-background-color")} style="background: {pub.css["opinion-background-color"]}; color: {pub.css["opinion-color-front"]}">O</div>
       </div>
     </div>
   {/each}
@@ -211,6 +212,18 @@
     padding-bottom: 0.5em;
     font-size: .8em;
     line-height: 1;
+    position: relative;
+  }
+  .aside div.warning::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    aspect-ratio: 1/1;
+    background-size: contain;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAACnUlEQVR4nOWWS2gTQRzGv6RJE1OSQAwFGyltWjfNqxepULF68ZAeFDF66kGsWDxozbXWoxQtHtWKCrUaDRZFaQVrq94LetCCxUcLRqwPqKAV0hcZ+S87i3F3k127EcSBD2Z3Zr7fzH+ewD+WGgAcA3BUyv+VdATAKgAmaQXA4XJDYwCWd2/1sLnhsKhdrR6CLwGIlBP8eL2ngs3fjTL2qFkU5ekfgIlyQfdSaC8cD8hQrvPdAR72PWZDHQDeROucbOVhXAFeHY+z5qCTwDMAnGaCe2lE42eCCijXk7NBPuoes6ABAAv7tns1oVzJNi+BFwDUmAFOOystbDbdVBL87maYuRxWgg+tFdoKIH+yo7oklKu3o5rAeQDb/hRqBTAZ8NvZj/uxAvO315rY/h1eUTPXCyNBdakNgKeSh+HUSYvlxolaxaieXxL4QmJTVwRFebqnlpcfMAp1A5hrjbhYfkIZzldXQzL49VBIUU5t2uJVVP4JgMcIuN9qAZs816i5iDg4mwmr1nk2sImRB4DTeqF02yweavdpLqDPtyMy+MudiGa9zoSPn+OCHvCo22UVLwAtw28jURn8fSRWtIPeKvEcv1cKupPM+rs2FN0yy2NxtllYJ4ryxeqSl9TJhBbUBmCqoaaSLT4obmZES2NxJmx0EPglALsaOEU9Gz1Vp8uQ38d66pKnNOru36E+APOJFrcuI9rHtgoLs9ssqvtYTYkWN4G/AvD/Cr5IJtODyj2ppheXBRFqBDw9GBLrAxjg0EZ6Q6WSfkNz93E4IspIm1TSz6T3mvhApLjrnq+16MOtcMFcd9HHe40TyExlMzJYfJUGAeTat7jLCs9mwnyB5QDU83k+KP1gZVZO7caql0LQJx3sZqpP8pZH+v+ln3wCWQv5336jAAAAAElFTkSuQmCC");
   }
 
   .loading {
