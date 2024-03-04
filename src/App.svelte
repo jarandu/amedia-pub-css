@@ -88,7 +88,7 @@
 {#if publications.length}
 <div class="info">
   <div>i</div>
-  <div>{publications.length} publikasjoner i lista, sortert på <select bind:value={sorted}><option value="name">navn</option><option value="theme">tema</option></select>. Viser tilpassede farger, med mindre den er a) hvit, b) default-grå, eller c) lik hovedfargen. Tema oppdatert {getDate(data.updated)}.</div>
+  <div>{publications.length} publikasjoner i lista, sortert på <select bind:value={sorted}><option value="name">navn</option><option value="theme">tema</option></select>. Viser tilpassede farger, med mindre den er a) hvit, b) default-grå, eller c) lik hovedfargen. Oppdatert {getDate(data.updated)}.</div>
 </div>
 <div class="container">
   {#each publications as pub,i}
