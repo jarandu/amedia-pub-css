@@ -203,10 +203,12 @@
     width: 0;
     height: 10px;
     background-color: rgb(9, 135, 224);
-    animation: loading 10s;
+    animation: loading 100s;
   }
   @keyframes loading {
     0% { width: 0; }
+    10% { width: 90%; }
+    20% { width: 98%; }
     100% { width: 100%; }
   }
   
