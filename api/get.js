@@ -74,7 +74,6 @@ const getCSS = async (publications, fields = []) => {
   return x;
 }
 
-export const maxDuration = 60; // 1 minute
 export default async (req, res) => {
 
   /* SERVER */

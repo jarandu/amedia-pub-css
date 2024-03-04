@@ -15,11 +15,25 @@
     }
   }
 
+
   $: if (data) publications = data.publications.sort(waysOfSorting[sorted])
   
   const colorCheck = (obj, colorName) => {
+    const rgbToHex = (r, g, b) => {
+      r = r.toString(16);
+      g = g.toString(16);
+      b = b.toString(16);
+      if (r.length == 1) r = "0" + r;
+      if (g.length == 1) g = "0" + g;
+      if (b.length == 1) b = "0" + b;
+      return "#" + r + g + b;
+    }
     let color = obj[colorName]
     if (!color) return false
+    if (color.startsWith("rgb")) {
+      let [r, g, b] = color.match(/\d+/g)
+      color = rgbToHex(r, g, b)
+    }
     return ![
       '#ffffff',
       'rgb(255,255,255)',
@@ -56,9 +70,12 @@
       "custom-background-color-two",
       "custom-background-color-two-front",
       "custom-background-color-three",
-      "custom-background-color-three-front"
+      "custom-background-color-three-front",
+      "opinion-background-color",
+      "opinion-color-front",
     ]
-    const url = './api/get?fields=' + fields.join(',')
+    const host = window.location.hostname == 'localhost' ? 'http://localhost:3000/' : './'
+    const url = host + 'api/get?fields=' + fields.join(',')
     const res = await fetch(url)
     if (res.ok) data = await res.json()
   })
@@ -82,14 +99,15 @@
       <a href="https://{pub.url}" target="_blank">
         <h2>{pub.name}</h2>
       </a>
+      {#if sorted != "theme"}{pub.theme.charAt(0).toUpperCase() + pub.theme.slice(1)}{/if}
       <!-- svelte-ignore a11y-click-events-have-key-events -->
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <span on:click={(e) => { if (!preventCopy) copy(e) }}>{pub.css["newspaper-color"].toLowerCase()}</span>
       <div class="aside">
-        {#if sorted != "theme"}<div style="background: transparent; border-style: dotted;">{pub.theme.substring(0,1).toUpperCase()}</div>{/if}
         {#if colorCheck(pub.css, "custom-background-color-one")}<div style="background: {pub.css["custom-background-color-one"]}; color: {pub.css["custom-background-color-one-front"]}">1</div>{/if}
         {#if colorCheck(pub.css, "custom-background-color-two")}<div style="background: {pub.css["custom-background-color-two"]}; color: {pub.css["custom-background-color-two-front"]}">2</div>{/if}
-        <!-- {#if colorCheck(pub.css, "custom-background-color-three")}<div style="background: {pub.css["custom-background-color-three"]}; color: {pub.css["custom-background-color-three-front"]}">3</div>{/if} -->
+        {#if colorCheck(pub.css, "custom-background-color-three")}<div style="background: {pub.css["custom-background-color-three"]}; color: {pub.css["custom-background-color-three-front"]}">3</div>{/if}
+        {#if colorCheck(pub.css, "opinion-background-color")}<div style="background: {pub.css["opinion-background-color"]}; color: {pub.css["opinion-color-front"]}">O</div>{/if}
       </div>
     </div>
   {/each}
@@ -174,23 +192,23 @@
   }
   .aside {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    top: 10px;
+    right: 10px;
     display: flex;
-    gap: 5px;
+    height: calc(100% - 20px);
     min-width: fit-content;
     justify-content: flex-end;
     align-items: flex-end;
-    padding: 10px;
+    border-radius: 3px;
+    overflow: hidden;
   }
   .aside div {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 2em;
+    align-items: flex-end;
+    height: 100%;
     width: 2em;
-    border-radius: 50%;
-    border: 1px solid white;
+    padding-bottom: 0.5em;
     font-size: .8em;
     line-height: 1;
   }
