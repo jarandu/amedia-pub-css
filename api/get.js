@@ -49,7 +49,20 @@ const getCSS = async (publications) => {
   })
 }
 
+export const maxDuration = 60;
 export default async (req, res) => {
+
+  /* SERVER */
+
+  // Enable CORS
+  res.setHeader('Access-Control-Allow-Credentials', true)
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST')
+  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version')
+
+  // Enable cache
+  res.setHeader('Cache-Control', 's-maxage=3600') // 1 hour
+
   const sites = await getSites()
   if (sites.length > 0) {
     const output = await getCSS(sites)
