@@ -50,6 +50,8 @@
   onMount(() => {
     generatePolygons();
   });
+
+  $: console.log('items', items);
 </script>
 
 <nav>
@@ -83,10 +85,10 @@
       <div class="map">
         <svg {width} {height} viewBox="0 0 {width} {height}">
           <g>
-            {#each polygons as polygon}
+            {#each polygons as polygon, i}
               <path
                 d={d3.line()(polygon)}
-                fill={pub.scale[Math.floor(Math.random() * numSteps)]}
+                fill={pub.scale[Math.floor(i * numSteps / numPolygons)]}
               />
             {/each}
           </g>
