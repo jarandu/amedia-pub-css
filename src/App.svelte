@@ -1,10 +1,20 @@
 <script>
   import { onMount } from "svelte";
+  import Buttons from "./Buttons.svelte";
+  import Scales from "./Scales.svelte";
 
   let data
   let publications = []
   let preventCopy
   let sorted = "name"
+
+  const getSection = (pathname) => {
+    const path = pathname.split("/")[1];
+    return path == '' ? "colors" : path;
+  }
+  $: section = getSection(window.location.pathname);
+
+  $: console.log("section", section);
 
   const waysOfSorting = {
     name: function (a,b) {
@@ -14,7 +24,6 @@
       return a.theme.localeCompare(b.theme)
     }
   }
-
 
   $: if (data) publications = data.publications.sort(waysOfSorting[sorted])
   
@@ -61,8 +70,7 @@
     return d.toLocaleString('nb-NO', { month: 'short', year: 'numeric', day: 'numeric' })
   }
 
-  onMount(async () => {
-    const fields = [
+  const fields = [
       "newspaper-color",
       "newspaper-color-inverted",
       "custom-background-color-one",
@@ -74,6 +82,12 @@
       "opinion-background-color",
       "opinion-color-front",
     ]
+
+  onMount(async () => {
+    if (window.location.hostname == 'localhost') {
+      data = await import('./assets/local.json');
+      return;
+    }
     const host = window.location.hostname == 'localhost' ? 'http://localhost:3000/' : './'
     const url = host + 'api/get?fields=' + fields.join(',')
     const res = await fetch(url)
@@ -85,33 +99,39 @@
 </script>
 
 {#if publications.length}
-<div class="info">
-  <div>i</div>
-  <div>{publications.length} publikasjoner i lista, sortert på <select bind:value={sorted}><option value="name">navn</option><option value="theme">tema</option></select>. Viser advarsel om fargen er a) hvit eller b) lik hovedfargen. Oppdatert {getDate(data.updated)}.</div>
-</div>
-<div class="container">
-  {#each publications as pub,i}
-    {#if sorted == "theme" && (pub.theme != publications[i-1]?.theme || i == 0)}
-    {@const count = publications.filter(p => p.theme == pub.theme).length}
-    <div class=divider>{pub.theme} ({count} publikasjon{count > 1 ? "er" : ""})</div>
-    {/if}
-    <div class="pub {pub.theme}-theme" style="background: {pub.css["newspaper-color"]}; color: {pub.css["newspaper-color-inverted"]};">
-      <a href="https://{pub.url}" target="_blank">
-        <h2>{pub.name}</h2>
-      </a>
-      {#if sorted != "theme"}{pub.theme.charAt(0).toUpperCase() + pub.theme.slice(1)}{/if}
-      <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <!-- svelte-ignore a11y-no-static-element-interactions -->
-      <span on:click={(e) => { if (!preventCopy) copy(e) }}>{pub.css["newspaper-color"].toLowerCase()}</span>
-      <div class="aside">
-        <div class:warning={!colorCheck(pub.css, "custom-background-color-one")} style="background: {pub.css["custom-background-color-one"]}; color: {pub.css["custom-background-color-one-front"]}">1</div>
-        <div class:warning={!colorCheck(pub.css, "custom-background-color-two")} style="background: {pub.css["custom-background-color-two"]}; color: {pub.css["custom-background-color-two-front"]}">2</div>
-        <div class:warning={!colorCheck(pub.css, "custom-background-color-three")} style="background: {pub.css["custom-background-color-three"]}; color: {pub.css["custom-background-color-three-front"]}">3</div>
-        <div class:warning={!colorCheck(pub.css, "opinion-background-color")} style="background: {pub.css["opinion-background-color"]}; color: {pub.css["opinion-color-front"]}">O</div>
+  <div class="info">
+    <div>i</div>
+    <div>{publications.length} publikasjoner i lista, sortert på <select bind:value={sorted}><option value="name">navn</option><option value="theme">tema</option></select>. Viser advarsel om fargen er a) hvit eller b) lik hovedfargen. Oppdatert {getDate(data.updated)}.</div>
+  </div>
+  {#if section == "colors"}
+    <div class="container">
+        {#each publications as pub,i}
+          {#if sorted == "theme" && (pub.theme != publications[i-1]?.theme || i == 0)}
+          {@const count = publications.filter(p => p.theme == pub.theme).length}
+          <div class=divider>{pub.theme} ({count} publikasjon{count > 1 ? "er" : ""})</div>
+          {/if}
+          <div class="pub {pub.theme}-theme" style="background: {pub.css["newspaper-color"]}; color: {pub.css["newspaper-color-inverted"]};">
+            <a href="https://{pub.url}" target="_blank">
+              <h2>{pub.name}</h2>
+            </a>
+            {#if sorted != "theme"}{pub.theme.charAt(0).toUpperCase() + pub.theme.slice(1)}{/if}
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <!-- svelte-ignore a11y-no-static-element-interactions -->
+            <span on:click={(e) => { if (!preventCopy) copy(e) }}>{pub.css["newspaper-color"].toLowerCase()}</span>
+            <div class="aside">
+              <div class:warning={!colorCheck(pub.css, "custom-background-color-one")} style="background: {pub.css["custom-background-color-one"]}; color: {pub.css["custom-background-color-one-front"]}">1</div>
+              <div class:warning={!colorCheck(pub.css, "custom-background-color-two")} style="background: {pub.css["custom-background-color-two"]}; color: {pub.css["custom-background-color-two-front"]}">2</div>
+              <div class:warning={!colorCheck(pub.css, "custom-background-color-three")} style="background: {pub.css["custom-background-color-three"]}; color: {pub.css["custom-background-color-three-front"]}">3</div>
+              <div class:warning={!colorCheck(pub.css, "opinion-background-color")} style="background: {pub.css["opinion-background-color"]}; color: {pub.css["opinion-color-front"]}">O</div>
+            </div>
+          </div>
+        {/each}
       </div>
-    </div>
-  {/each}
-</div>
+    {:else if section == "buttons"}
+      <Buttons {publications} properties={fields} />
+    {:else if section == "scales"}
+      <Scales {publications} />
+    {/if}
 {:else}
   <div>Hei! Bare sitt i ro, du. Laster inn tema og css-variabler. Tar cirka 10 sek.</div>
   <div class="loading">

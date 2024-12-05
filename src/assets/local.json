@@ -1,0 +1,2246 @@
+{
+  "updated": "2024-12-05T13:09:15.610Z",
+  "publications": [
+  {
+  "name": "Åsane Tidende",
+  "url": "www.aasanetidende.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#d60f40",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#d60f40",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#FEAB2F",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#C20454",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Ås Avis",
+  "url": "www.aasavis.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#1F7825",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#D20000",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#1F7825",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Akersposten",
+  "url": "www.akersposten.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#24397a",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#24397A",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#AC1616",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Alt",
+  "url": "www.alt.no",
+  "theme": "alt",
+  "css": {
+  "newspaper-color": "#292827",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#ffffff",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#ffffff",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Akershus Amtstidende",
+  "url": "www.amta.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#DD080F",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#f47920",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#dd080f",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#3399FF",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Avisa Nordland",
+  "url": "www.an.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#0090BB",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#66C3DF",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#FFDEBF",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#66268c",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Avisa Oslo",
+  "url": "www.ao.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#b71918",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#FCDDAF",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#b71918",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#A044CA",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Aura Avis",
+  "url": "www.auraavis.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#2F2754",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#829DAC",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#AA1313",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#04B45F",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Aust-Agder Blad",
+  "url": "www.austagderblad.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#2196C6",
+  "newspaper-color-inverted": "#292827",
+  "custom-background-color-one": "#C41E3A",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#006600",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#80461B",
+  "custom-background-color-three-front": "#ffffff",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Avisa Hordaland",
+  "url": "www.avisa-hordaland.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#5c8aa7",
+  "newspaper-color-inverted": "#292827",
+  "custom-background-color-one": "#FCDDAF",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#B71918",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#5c8aa7",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Avisa Valdres",
+  "url": "www.avisa-valdres.no",
+  "theme": "bravo",
+  "css": {
+  "newspaper-color": "#890000",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#007193",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#8A0000",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#B5B5B5",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Avisa Gaula",
+  "url": "www.avisagaula.no",
+  "theme": "bravo",
+  "css": {
+  "newspaper-color": "#004C7E",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#00314D",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#ad1e2d",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#CFCFCF",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#ad1e2d",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Avisen Agder",
+  "url": "www.avisenagder.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#0e67b1",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#D0E4F1",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#FFCC14",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#FEEFE0",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#0e67b1",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Bergensavisen",
+  "url": "www.ba.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#DB0000",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#450A1C",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#DB0000",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#DB0000",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Bladet Vesterålen",
+  "url": "www.blv.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#E71E24",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#E71E24",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#feefe0",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#D20000",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Bodø Nu",
+  "url": "www.bodonu.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#DD1C1A",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#DD1C1A",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#486B47",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#FD8D15",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#FD8D15",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Bondebladet",
+  "url": "www.bondebladet.no",
+  "theme": "bravo",
+  "css": {
+  "newspaper-color": "#CC9933",
+  "newspaper-color-inverted": "#292827",
+  "custom-background-color-one": "#CC9933",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#ffffff",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#CFCFCF",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Budstikka",
+  "url": "www.budstikka.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#003178",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#0A1938",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#CCE5FF",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#CFCFCF",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#e68408",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Bygdebladet",
+  "url": "www.bygdebladet.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#5ca75b",
+  "newspaper-color-inverted": "#292827",
+  "custom-background-color-one": "#4D772D",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#C41012",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#CFC9C9",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#5ca75b",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Bygdeposten",
+  "url": "www.bygdeposten.no",
+  "theme": "bravo",
+  "css": {
+  "newspaper-color": "#124887",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#D9E9F9",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#2F422A",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#FCDDAF",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#ff8400",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Dalane Tidende",
+  "url": "www.dalane-tidende.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#226a8a",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#216A8A",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#D31E1E",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#000066",
+  "custom-background-color-three-front": "#ffffff",
+  "opinion-background-color": "#226a8a",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Drangedalsposten",
+  "url": "www.drangedalsposten.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#13584A",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#AE4688",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#DDD1E9",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#DFEABB",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Drammens Tidende",
+  "url": "www.dt.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#162850",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#162850",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#A60812",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#000000",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Eikerbladet",
+  "url": "www.eikerbladet.no",
+  "theme": "bravo",
+  "css": {
+  "newspaper-color": "#EA1D25",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#D3F9B5",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#EA1D25",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#ffcae4",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#ff8400",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Enebakk Avis",
+  "url": "www.enebakkavis.no",
+  "theme": "bravo",
+  "css": {
+  "newspaper-color": "#008837",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#B8DEF4",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#1E6239",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#CFCFCF",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Eidsvoll Ullensaker Blad",
+  "url": "www.eub.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#006699",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#006699",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#ffffff",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Fredriksstad Blad",
+  "url": "www.f-b.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#2D77A2",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#FFBE28",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#D20000",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#8FBFE0",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Fanaposten",
+  "url": "www.fanaposten.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#E31717",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#991414",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#B6D5F7",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#CFCFCF",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#e68408",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Finnmarksposten",
+  "url": "www.finnmarksposten.no",
+  "theme": "charlie",
+  "css": {
+  "newspaper-color": "#3D59A7",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#3D59A7",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#B71918",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Firda",
+  "url": "www.firda.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#0075a9",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#D0E4F1",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#003366",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#829dac",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Firdaposten",
+  "url": "www.firdaposten.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#ED1C24",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#2F4D92",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#A60812",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#829dac",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Fremover",
+  "url": "www.fremover.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#E40B15",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#16254c",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#C41012",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#e40b15",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Frostingen",
+  "url": "www.frostingen.no",
+  "theme": "charlie",
+  "css": {
+  "newspaper-color": "#007681",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#164B4E",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#FCC49C",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD7D4",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#AAD3DE",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Gjesdalbuen",
+  "url": "www.gbnett.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#bb141a",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#bb141a",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#feefe0",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#5c5c5c",
+  "custom-background-color-three-front": "#ffffff",
+  "opinion-background-color": "#bb141a",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Gudbrandsdølen Dagningen",
+  "url": "www.gd.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#004877",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#004877",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#A60812",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#feefe0",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Gjengangeren",
+  "url": "www.gjengangeren.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#d60021",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#FC5727",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#D60021",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#AEAAA6",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#a1c0a0",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Glåmdalen",
+  "url": "www.glomdalen.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#CD000A",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#feefe0",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#cc0000",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#80A9BD",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Hamar Arbeiderblad",
+  "url": "www.h-a.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#c50023",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#FFDEBF",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#003455",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#D2691E",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Haugesunds Avis",
+  "url": "www.h-avis.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#003366",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#003366",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#ffffff",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#d0e4f1",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Halden Arbeiderblad",
+  "url": "www.ha-halden.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#DF0025",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#A8DCFF",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#DF0025",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#FCDDAF",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#FFA652",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Hadeland",
+  "url": "www.hadeland.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#0060A9",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#0060A9",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#E00000",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#636363",
+  "custom-background-color-three-front": "#ffffff",
+  "opinion-background-color": "#5757FF",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Hammerfestingen",
+  "url": "www.hammerfestingen.no",
+  "theme": "charlie",
+  "css": {
+  "newspaper-color": "#c52434",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#008545",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#c52434",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#137785",
+  "custom-background-color-three-front": "#ffffff",
+  "opinion-background-color": "#6f0f91",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Hardanger Folkeblad",
+  "url": "www.hardanger-folkeblad.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#2170AD",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#2170AD",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#E00016",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#CFCFCF",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Helgelendingen",
+  "url": "www.helg.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#00529C",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#B8DBFB",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#AF071F",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#EAA4A8",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "iFinnmark",
+  "url": "www.ifinnmark.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#D90000",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#004a95",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#C72A1C",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#ff8400",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "iFinnmarkdebatten",
+  "url": "www.ifinnmarkdebatten.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#d31820",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#d31820",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#ffffff",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "iHarstad",
+  "url": "www.iharstad.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#000000",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#B8DBFB",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#C41012",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "iLevanger",
+  "url": "www.ilevanger.no",
+  "theme": "bravo",
+  "css": {
+  "newspaper-color": "#0069B4",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#0069B4",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#c8edaf",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#CFCFCF",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#c41012",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Inderøyningen",
+  "url": "www.inderoyningen.no",
+  "theme": "charlie",
+  "css": {
+  "newspaper-color": "#0076bd",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#A1D8F9",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#66268C",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#C8EDAF",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Indre Akershus Blad",
+  "url": "www.indre.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#0C5A98",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#0C5A98",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#66268C",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#0C5A98",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "iSandnessjøen",
+  "url": "www.isandnessjoen.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#ffce00",
+  "newspaper-color-inverted": "#292827",
+  "custom-background-color-one": "#B2D8FB",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#CA2B33",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#ED8186",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Jarlsberg Avis",
+  "url": "www.jarlsbergavis.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#EC2127",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#ffff00",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#006699",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#a1c0a0",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Jærbladet",
+  "url": "www.jbl.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#005f9e",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#5C5C5C",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#DFEAF1",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#FEEFE0",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#005f9e",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Karmøynytt",
+  "url": "www.karmoynytt.no",
+  "theme": "bravo",
+  "css": {
+  "newspaper-color": "#A60303",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#A6A5A4",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#A60303",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#CFCFCF",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#2F4159",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Kronstadposten",
+  "url": "www.kp.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#0075BF",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#005eb8",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#7300A8",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#CCDBCD",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "KRS - Avisen Kristiansand",
+  "url": "www.krs.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#E20000",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#DDF5F6",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#E20000",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#E20000",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Kragerø Blad Vestmar",
+  "url": "www.kv.no",
+  "theme": "bravo",
+  "css": {
+  "newspaper-color": "#d3181f",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#D0E4F1",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#C41012",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#FCDDAF",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Kvinnheringen",
+  "url": "www.kvinnheringen.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#074884",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#074884",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#d20000",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Laagendalsposten",
+  "url": "www.laagendalsposten.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#0c59a0",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#990033",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#00FA9A",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#00FA9A",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Lierposten",
+  "url": "www.lierposten.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#58595b",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#ff0033",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#43848a",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#99cc33",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#ff8400",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Lofot-Tidende",
+  "url": "www.lofot-tidende.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#024B7B",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#024B7B",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#FF4A89",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#CC4608",
+  "custom-background-color-three-front": "#ffffff",
+  "opinion-background-color": "#dcd8d8",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Lofotposten",
+  "url": "www.lofotposten.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#D60021",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#2577A1",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#035E59",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#dddddd",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Lokalavisa Trysil Engerdal",
+  "url": "www.lokal-avisa.no",
+  "theme": "bravo",
+  "css": {
+  "newspaper-color": "#00446a",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#00446a",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#FEAB2F",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#CFCFCF",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#C20454",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Lyngdals Avis",
+  "url": "www.lyngdalsavis.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#fda947",
+  "newspaper-color-inverted": "#292827",
+  "custom-background-color-one": "#fda947",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#ffffff",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#fda947",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Meråkerposten",
+  "url": "www.merakerposten.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#006B95",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#006B95",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#C41012",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#AEAAA6",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#065535",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "MittJessheim",
+  "url": "www.mittjessheim.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#D72532",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#2e4971",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#D0E4F1",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#D72532",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "MittLillestrøm",
+  "url": "www.mittlillestrom.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#D72532",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#2e4971",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#D0E4F1",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#D72532",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "MittLørenskog",
+  "url": "www.mittloerenskog.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#D72532",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#2e4971",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#D0E4F1",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#D72532",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Moss Avis",
+  "url": "www.moss-avis.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#2D77A2",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#162850",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#A60812",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#FCDDAF",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#CEBDDD",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Nordre Aker Budstikke",
+  "url": "www.nab.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#084ba2",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#084BA2",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#AC1616",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Namdalsavisa",
+  "url": "www.namdalsavisa.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#e10031",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#9fd0f5",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#cc002c",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#595858",
+  "custom-background-color-three-front": "#ffffff",
+  "opinion-background-color": "#AD1E2D",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Nationen",
+  "url": "www.nationen.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#306321",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#C4E1ED",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#306321",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#F2E4DE",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#EAF0E3",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Nettavisen",
+  "url": "www.nettavisen.no",
+  "theme": "nettavisen",
+  "css": {
+  "newspaper-color": "#000",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#EB0037",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#FFCC14",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#000",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Nidaros",
+  "url": "www.nidaros.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#000",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#ad1e2d",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#ffffff",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#ff8400",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Nordstrands Blad",
+  "url": "www.noblad.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#1f6bb4",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#16254C",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#feefe0",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#B71918",
+  "custom-background-color-three-front": "#ffffff",
+  "opinion-background-color": "#FFC2D2",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Nord24",
+  "url": "www.nord24.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#264358",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#feefe0",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#ffffff",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Norddalen",
+  "url": "www.norddalen.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#00205E",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#00205E",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#B71918",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#C7E7EB",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Avisa Nordhordland",
+  "url": "www.nordhordland.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#DE0C08",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#8cc63f",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#ffffff",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#a1c0a0",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Nordlys",
+  "url": "www.nordlys.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#d20000",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#1A4973",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#241950",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#002c22",
+  "custom-background-color-three-front": "#ffffff",
+  "opinion-background-color": "#d31820",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Nordnorsk debatt",
+  "url": "www.nordnorskdebatt.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#d31820",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#d31820",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#ffffff",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Norsk Landbruk",
+  "url": "www.norsklandbruk.no",
+  "theme": "bravo",
+  "css": {
+  "newspaper-color": "#345C77",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#345C77",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#ffffff",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#CFCFCF",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "NT24",
+  "url": "www.nt24.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#000",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#ffffff",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#ffffff",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Nye Troms",
+  "url": "www.nyetroms.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#333333",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#d00000",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#ffeafb",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#cae8ff",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Oppland Arbeiderblad",
+  "url": "www.oa.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#DE2029",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#1E4262",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#C41C24",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#a1c0a0",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Østlandets Blad",
+  "url": "www.oblad.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#006cb8",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#16254c",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#0063AF",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Østlands-Posten",
+  "url": "www.op.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#006699",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#BADCF2",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#006699",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#a1c0a0",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Østlendingen",
+  "url": "www.ostlendingen.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#C41012",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#003455",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#B42A21",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#B65916",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Øyene",
+  "url": "www.oyene.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#484A8F",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#484A8F",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#D20000",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#F2BFBF",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#a1c0a0",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Porsgrunns Dagblad",
+  "url": "www.pd.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#0069AD",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#0069ad",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#ffffff",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#309ad1",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Rakkestad Avis",
+  "url": "www.r-a.no",
+  "theme": "charlie",
+  "css": {
+  "newspaper-color": "#1a693a",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#D0D3B0",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#3F6478",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD7D4",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#F3C54F",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Rjukan Arbeiderblad",
+  "url": "www.rablad.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#f20017",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#4D772D",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#E00016",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Rana Blad",
+  "url": "www.ranablad.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#d71c22",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#66268C",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#D0E4F1",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#f3c3c3",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Rana No",
+  "url": "www.ranano.no",
+  "theme": "bravo",
+  "css": {
+  "newspaper-color": "#152a47",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#152a47",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#d33536",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#CFCFCF",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#152a47",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "RA Stavanger",
+  "url": "www.rastavanger.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#000000",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#96C9A5",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#0a1938",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#85210C",
+  "custom-background-color-three-front": "#ffffff",
+  "opinion-background-color": "#C7C7C7",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Raumnes",
+  "url": "www.raumnes.no",
+  "theme": "bravo",
+  "css": {
+  "newspaper-color": "#0078A5",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#B6DEFA",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#00648A",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#C3E4D2",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Romerikes Blad",
+  "url": "www.rb.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#D72532",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#2e4971",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#D0E4F1",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#D72532",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Arbeidets Rett",
+  "url": "www.retten.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#DE0410",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#1F7825",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#CD040E",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Røyken og Hurums Avis",
+  "url": "www.rha.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#0096D7",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#990033",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#ffffff",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#ff8400",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Ringerikes Blad",
+  "url": "www.ringblad.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#0c59a0",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#0C59A0",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#C41012",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#636363",
+  "custom-background-color-three-front": "#ffffff",
+  "opinion-background-color": "#0c59a0",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Ringsaker Blad",
+  "url": "www.ringsaker-blad.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#eb212e",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#636363",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#E91624",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#82204F",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Sarpsborg Arbeiderblad",
+  "url": "www.sa.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#E60004",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#0080e0",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#FCDDAF",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#EF8A17",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Sagene Avis",
+  "url": "www.sageneavis.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#07a94e",
+  "newspaper-color-inverted": "#292827",
+  "custom-background-color-one": "#07A94E",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#AC1616",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Sande Avis",
+  "url": "www.sandeavis.no",
+  "theme": "bravo",
+  "css": {
+  "newspaper-color": "#292827",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#C8EDAF",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#B41413",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#2e3192",
+  "custom-background-color-three-front": "#ffffff",
+  "opinion-background-color": "#ff8400",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Sandnesposten",
+  "url": "www.sandnesposten.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#117ABB",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#083A59",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#B71918",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#117ABB",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Sandefjords Blad",
+  "url": "www.sb.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#004e96",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#004E96",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#1A00B0",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#a1c0a0",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Senja247",
+  "url": "www.senja247.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#c90c0f",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#e24535",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#0075be",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Smaalenenes Avis",
+  "url": "www.smaalenene.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#42719C",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#B6E99F",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#19568F",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Snåsningen",
+  "url": "www.snasningen.no",
+  "theme": "bravo",
+  "css": {
+  "newspaper-color": "#af0737",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#0037A9",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#af0737",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#CFCFCF",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Sogn Avis",
+  "url": "www.sognavis.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#2b98d4",
+  "newspaper-color-inverted": "#292827",
+  "custom-background-color-one": "#B1E6FB",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#E00000",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#234a64",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Solabladet",
+  "url": "www.solabladet.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#2b67b9",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#2b67b9",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#0A1938",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#f9001f",
+  "custom-background-color-three-front": "#ffffff",
+  "opinion-background-color": "#2b67b9",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Solungavisa",
+  "url": "www.solungavisa.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#d00c44",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#d00c44",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#ffffff",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Stangeavisa",
+  "url": "www.stangeavisa.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#ed2026",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#ed2026",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#07a94e",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Steinkjer-Avisa",
+  "url": "www.steinkjer-avisa.no",
+  "theme": "bravo",
+  "css": {
+  "newspaper-color": "#c9252c",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#A1D8F9",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#C9252C",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#CFCFCF",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Strandbuen",
+  "url": "www.strandbuen.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#2b4679",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#2b4679",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#ffffff",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#2b4679",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Sør-Varanger Avis",
+  "url": "www.sva.no",
+  "theme": "charlie",
+  "css": {
+  "newspaper-color": "#0082B9",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#5AADD1",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#AC98B9",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD7D4",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Svelviksposten",
+  "url": "www.svelviksposten.no",
+  "theme": "charlie",
+  "css": {
+  "newspaper-color": "#90007b",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#83B692",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#90007B",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#ffcae4",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#ff8400",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Sydvesten",
+  "url": "www.sydvesten.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#d33536",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#d33536",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#FEAB2F",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#C20454",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Trønder-Avisa",
+  "url": "www.t-a.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#0071bc",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#d0e4f1",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#0071bc",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#595858",
+  "custom-background-color-three-front": "#ffffff",
+  "opinion-background-color": "#ad1e2d",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Telemarksavisa",
+  "url": "www.ta.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#e30613",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#B8DBFB",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#E30613",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Tønsbergs Blad",
+  "url": "www.tb.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#B61921",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#ffff00",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#B61921",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#006699",
+  "custom-background-color-three-front": "#ffffff",
+  "opinion-background-color": "#a1c0a0",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Telen",
+  "url": "www.telen.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#323896",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#D4D9B6",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#C72A1C",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Tidens Krav",
+  "url": "www.tk.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#006FA8",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#285886",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#c41c24",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#c8edaf",
+  "opinion-color-front": "#292827"
+  }
+  },
+  {
+  "name": "Toten Idag",
+  "url": "www.totenidag.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#6396b1",
+  "newspaper-color-inverted": "#292827",
+  "custom-background-color-one": "#C8EDAF",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#66268C",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#AFDCE8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Traktor",
+  "url": "www.traktor.no",
+  "theme": "bravo",
+  "css": {
+  "newspaper-color": "#CF1936",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#CF1936",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#ffffff",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#CFCFCF",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "TromsøBy",
+  "url": "www.tromsoby.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#e24535",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#e24535",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#0075be",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Trønderdebatt",
+  "url": "www.tronderdebatt.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#AD1E2D",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#AD1E2D",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#02315F",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#73655D",
+  "custom-background-color-three-front": "#ffffff",
+  "opinion-background-color": "#3F604E",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Tvedestrandsposten",
+  "url": "www.tvedestrandsposten.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#006699",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#B4DEF4",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#B62400",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Ullern Avis",
+  "url": "www.ullernavis.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#000000",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#ffffff",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#ffffff",
+  "custom-background-color-two-front": "#292827",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Varingen",
+  "url": "www.varingen.no",
+  "theme": "alfa",
+  "css": {
+  "newspaper-color": "#bb2035",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#006627",
+  "custom-background-color-one-front": "#ffffff",
+  "custom-background-color-two": "#BB2035",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#DCD8D8",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Vestby Avis",
+  "url": "www.vestbyavis.no",
+  "theme": "bravo",
+  "css": {
+  "newspaper-color": "#444444",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#d0e4f1",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#16254c",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#CFCFCF",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  },
+  {
+  "name": "Vaksdalposten",
+  "url": "www.vp.no",
+  "theme": "bravo",
+  "css": {
+  "newspaper-color": "#973c39",
+  "newspaper-color-inverted": "#ffffff",
+  "custom-background-color-one": "#FDE0C4",
+  "custom-background-color-one-front": "#292827",
+  "custom-background-color-two": "#973C39",
+  "custom-background-color-two-front": "#ffffff",
+  "custom-background-color-three": "#CFCFCF",
+  "custom-background-color-three-front": "#292827",
+  "opinion-background-color": "#292827",
+  "opinion-color-front": "#ffffff"
+  }
+  }
+  ],
+  "filteredOut": [
+  "Salsaposten",
+  "Tangotidende",
+  "Avisnavn",
+  "iVerdal",
+  "Finnmarken",
+  "Finnmark Dagblad",
+  "FreestyleFolkeblad",
+  "MinMenuett",
+  "Oslodebatten",
+  "Polkaposten",
+  "Rumbarapporten",
+  "Vise"
+  ]
+  }
