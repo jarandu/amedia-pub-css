@@ -100,9 +100,13 @@
 
 <style>
   nav {
-    padding: 0 1rem;
+    padding: 0.5rem 1rem;
+    position: sticky;
+    z-index: 2;
+    top: 0;
     display: grid;
-    gap: 0.5rem;
+    background: white;
+    gap: 0.2rem;
     grid-template-columns: auto 1fr auto;
   }
   .container {
