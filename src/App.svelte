@@ -8,11 +8,11 @@
   let preventCopy
   let sorted = "name"
 
-  const getSection = (pathname) => {
-    const path = pathname.split("/")[1];
-    return path == '' ? "colors" : path;
+  const getSection = () => {
+    const parameters = new URLSearchParams(window.location.search);
+    return parameters.get("case") || "colors";
   }
-  $: section = getSection(window.location.pathname);
+  let section = getSection()
 
   $: console.log("section", section);
 
