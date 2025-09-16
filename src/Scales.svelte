@@ -30,10 +30,7 @@
   }
 
   function generateScale(baseColor, lightnessStart = 90, lightnessEnd = 10, saturationCompensation = 0) {
-    // Convert base color to HSL
     const hsl = d3.hsl(baseColor);
-
-    // Generate a scale by interpolating between the specified lightness levels
     return d3.range(numSteps).map((i) => {
       const t = i / (numSteps - 1); // Interpolation factor
       const lightness = lightnessStart + t * (lightnessEnd - lightnessStart);
@@ -41,9 +38,20 @@
     });
   }
 
+  // input is either hex or rgb, check if values ar the same (has saturation)
+  const isGreyish = (color) => {
+    const values = color.startsWith('#') && color.length == 7 ? color.match(/\w{2}/g) : color.startsWith('#') && color.length == 4 ? color.match(/\w{1}/g) : color.match(/\d+/g);
+    return values[0] === values[1] && values[1] === values[2];
+  }
+
+  const isSaturated = (color) => {
+    return d3.hsl(color).s > 0.05;
+  }
+
   $: items = publications.map((pub) => {
     const baseColor = pub.css[field];
-    const scale = generateScale(baseColor, lightnessMax, lightnessMin, saturationCompensation);
+    const color = isSaturated(baseColor) ? baseColor : pub.css['custom-background-color-one'];
+    const scale = generateScale(color, lightnessMax, lightnessMin, saturationCompensation);
     return { ...pub, scale };
   });
 
@@ -122,7 +130,7 @@
     column-gap: 1rem;
     align-items: center;
     position: relative;
-    min-width: 280px;
+    min-width: 200px;
     max-width: 100%;
     flex: 1;
     padding: 1em;

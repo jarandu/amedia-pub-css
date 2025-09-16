@@ -1,20 +1,16 @@
 <script>
   import { onMount } from "svelte";
+  import * as d3 from 'd3';
   import Buttons from "./Buttons.svelte";
   import Scales from "./Scales.svelte";
+  import { getSection, getColorFamily } from "./utils";
 
-  let data
-  let publications = []
-  let preventCopy
-  let sorted = "name"
 
-  const getSection = () => {
-    const parameters = new URLSearchParams(window.location.search);
-    return parameters.get("case") || "colors";
-  }
-  let section = getSection()
-
-  $: console.log("section", section);
+  let data;
+  let publications = [];
+  let preventCopy;
+  let sorted = "color";
+  let section = getSection();
 
   const waysOfSorting = {
     name: function (a,b) {
@@ -22,34 +18,70 @@
     },
     theme: function (a,b) {
       return a.theme.localeCompare(b.theme)
+    },
+    color: function (a,b) {
+      const colorA = d3.hsl(a.css["newspaper-color"]);
+      const colorB = d3.hsl(b.css["newspaper-color"]);
+      
+      // Håndter NaN hue-verdier (grå/svarte farger)
+      const hueA = isNaN(colorA.h) ? 0 : colorA.h;
+      const hueB = isNaN(colorB.h) ? 0 : colorB.h;
+      
+      // Først: sorter etter fargefamilie
+      const familyA = getColorFamily(hueA, colorA.s, colorA.l);
+      const familyB = getColorFamily(hueB, colorB.s, colorB.l);
+      
+      if (familyA !== familyB)
+        return familyA - familyB;
+      
+      // Samme familie: sorter etter hue
+      if (Math.abs(hueA - hueB) > 1) 
+        return hueA - hueB;
+      
+      // Samme hue: sorter etter saturation (høyere først)
+      if (Math.abs(colorA.s - colorB.s) > 0.05) 
+        return colorB.s - colorA.s;
+      
+      // Til slutt: sorter etter lightness
+      return colorA.l - colorB.l;
     }
   }
 
-  $: if (data) publications = data.publications.sort(waysOfSorting[sorted])
-  
-  const colorCheck = (obj, colorName) => {
-    const rgbToHex = (r, g, b) => {
-      r = r.toString(16);
-      g = g.toString(16);
-      b = b.toString(16);
-      if (r.length == 1) r = "0" + r;
-      if (g.length == 1) g = "0" + g;
-      if (b.length == 1) b = "0" + b;
-      return "#" + r + g + b;
-    }
-    let color = obj[colorName]
-    if (!color) return false
-    if (color.startsWith("rgb")) {
-      let [r, g, b] = color.match(/\d+/g)
-      color = rgbToHex(r, g, b)
-    }
-    return ![
-      '#ffffff',
-      'rgb(255,255,255)',
-      'rgb(255, 255, 255)',
-      obj["newspaper-color"].toLowerCase()
-    ].includes(color.toLowerCase())
+  const sortOptions = {
+    name: "Navn",
+    theme: "Tema",
+    color: "Farge"
   }
+
+  const sections = {
+    colors: "Farger",
+    scales: "Skaler",
+    buttons: "Knapper"
+  }
+  
+  // const colorCheck = (obj, colorName) => {
+  //   const rgbToHex = (r, g, b) => {
+  //     r = r.toString(16);
+  //     g = g.toString(16);
+  //     b = b.toString(16);
+  //     if (r.length == 1) r = "0" + r;
+  //     if (g.length == 1) g = "0" + g;
+  //     if (b.length == 1) b = "0" + b;
+  //     return "#" + r + g + b;
+  //   }
+  //   let color = obj[colorName]
+  //   if (!color) return false
+  //   if (color.startsWith("rgb")) {
+  //     let [r, g, b] = color.match(/\d+/g)
+  //     color = rgbToHex(r, g, b)
+  //   }
+  //   return ![
+  //     '#ffffff',
+  //     'rgb(255,255,255)',
+  //     'rgb(255, 255, 255)',
+  //     obj["newspaper-color"].toLowerCase()
+  //   ].includes(color.toLowerCase())
+  // }
 
   const copy = (event) => {
     let el = event.target
@@ -83,55 +115,86 @@
       "opinion-color-front",
     ]
 
-  onMount(async () => {
-    if (window.location.hostname == 'localhost') {
-      data = await import('./assets/local.json');
-      return;
-    }
-    const host = window.location.hostname == 'localhost' ? 'http://localhost:3000/' : './'
-    const url = host + 'api/get?fields=' + fields.join(',')
-    const res = await fetch(url)
-    if (res.ok) data = await res.json()
-  })
+  const getHue = (data) => {
+    const publications = data.publications.map(p => {
+      return {
+        ...p,
+        hue: d3.hsl(p.css["newspaper-color"]).h
+      }
+    });
+    return {
+      ...data,
+      publications
+    };
+  };
 
-  $: console.log(publications)
+  onMount(async () => {
+    let d;
+    if (window.location.hostname == 'localhost')
+      d = await import('./assets/local.json');
+    else {
+      const host = window.location.hostname == 'localhost' ? 'http://localhost:3000/' : './'
+      const url = host + 'api/get?fields=' + fields.join(',')
+      const res = await fetch(url);
+      if (res.ok) d = await res.json();
+    }
+    data = getHue(d);
+  });
+
+  const changeSection = (key) => {
+    section = key;
+    window.history.pushState({}, '', `?section=${key}`);
+  }
+
+  $: if (data) {
+    publications = data.publications.sort(waysOfSorting[sorted]);
+  };
 
 </script>
 
 {#if publications.length}
-  <div class="info">
-    <div>i</div>
-    <div>{publications.length} publikasjoner i lista, sortert på <select bind:value={sorted}><option value="name">navn</option><option value="theme">tema</option></select>. Viser advarsel om fargen er a) hvit eller b) lik hovedfargen. Oppdatert {getDate(data.updated)}.</div>
-  </div>
+  <header>
+    <nav>
+      {#each Object.entries(sections) as [key, value]}
+        <button class:active={section == key} on:click={() => changeSection(key)}>{value}</button>
+      {/each}
+    </nav>
+    <div>{publications.length} publikasjoner i lista, sortert på 
+      <select bind:value={sorted}> 
+        {#each Object.entries(sortOptions) as [key, value]}
+          <option value={key}>{value}</option>
+        {/each}
+      </select>. Oppdatert {getDate(data.updated)}.</div>
+  </header>
   {#if section == "colors"}
     <div class="container">
-        {#each publications as pub,i}
-          {#if sorted == "theme" && (pub.theme != publications[i-1]?.theme || i == 0)}
-          {@const count = publications.filter(p => p.theme == pub.theme).length}
-          <div class=divider>{pub.theme} ({count} publikasjon{count > 1 ? "er" : ""})</div>
-          {/if}
-          <div class="pub {pub.theme}-theme" style="background: {pub.css["newspaper-color"]}; color: {pub.css["newspaper-color-inverted"]};">
-            <a href="https://{pub.url}" target="_blank">
-              <h2>{pub.name}</h2>
-            </a>
-            {#if sorted != "theme"}{pub.theme.charAt(0).toUpperCase() + pub.theme.slice(1)}{/if}
-            <!-- svelte-ignore a11y-click-events-have-key-events -->
-            <!-- svelte-ignore a11y-no-static-element-interactions -->
-            <span on:click={(e) => { if (!preventCopy) copy(e) }}>{pub.css["newspaper-color"].toLowerCase()}</span>
-            <div class="aside">
-              <div class:warning={!colorCheck(pub.css, "custom-background-color-one")} style="background: {pub.css["custom-background-color-one"]}; color: {pub.css["custom-background-color-one-front"]}">1</div>
-              <div class:warning={!colorCheck(pub.css, "custom-background-color-two")} style="background: {pub.css["custom-background-color-two"]}; color: {pub.css["custom-background-color-two-front"]}">2</div>
-              <div class:warning={!colorCheck(pub.css, "custom-background-color-three")} style="background: {pub.css["custom-background-color-three"]}; color: {pub.css["custom-background-color-three-front"]}">3</div>
-              <div class:warning={!colorCheck(pub.css, "opinion-background-color")} style="background: {pub.css["opinion-background-color"]}; color: {pub.css["opinion-color-front"]}">O</div>
-            </div>
+      {#each publications as pub,i}
+        {#if sorted == "theme" && (pub.theme != publications[i-1]?.theme || i == 0)}
+        {@const count = publications.filter(p => p.theme == pub.theme).length}
+        <div class=divider>{pub.theme} ({count} publikasjon{count > 1 ? "er" : ""})</div>
+        {/if}
+        <div class="pub {pub.theme}-theme" style="background: {pub.css["newspaper-color"]}; color: {pub.css["newspaper-color-inverted"]};">
+          <a href="https://{pub.url}" target="_blank">
+            <h2>{pub.name}</h2>
+          </a>
+          {#if sorted != "theme"}{pub.theme.charAt(0).toUpperCase() + pub.theme.slice(1)}{/if}
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
+          <!-- svelte-ignore a11y-no-static-element-interactions -->
+          <span on:click={(e) => { if (!preventCopy) copy(e) }}>{pub.css["newspaper-color"].toLowerCase()}</span>
+          <div class="aside">
+            <div style="background: {pub.css["custom-background-color-one"]}; color: {pub.css["custom-background-color-one-front"]}">1</div>
+            <div style="background: {pub.css["custom-background-color-two"]}; color: {pub.css["custom-background-color-two-front"]}">2</div>
+            <div style="background: {pub.css["custom-background-color-three"]}; color: {pub.css["custom-background-color-three-front"]}">3</div>
+            <div style="background: {pub.css["opinion-background-color"]}; color: {pub.css["opinion-color-front"]}">O</div>
           </div>
-        {/each}
-      </div>
-    {:else if section == "buttons"}
-      <Buttons {publications} properties={fields} />
-    {:else if section == "scales"}
-      <Scales {publications} />
-    {/if}
+        </div>
+      {/each}
+    </div>
+  {:else if section == "buttons"}
+    <Buttons {publications} properties={fields} />
+  {:else if section == "scales"}
+    <Scales {publications} />
+  {/if}
 {:else}
   <div>Hei! Bare sitt i ro, du. Laster inn tema og css-variabler. Tar cirka 10 sek.</div>
   <div class="loading">
@@ -140,24 +203,28 @@
 {/if}
 
 <style>
-  .info {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 1em;
+  }
+  nav {
     display: flex;
     gap: .5em;
-    align-items: center;
   }
-  .info div:first-child {
-    display: inline-flex;
-    font-size: .9em;
-    font-weight: 500;
-    justify-content: center;
-    align-items: center;
-    min-width: 1.2em;
-    height: 1.2em;
-    line-height: 1;
-    border-radius: 50%;
-    color: white;
-    background-color: #333;
+  nav button {
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+    padding: 0.25em .6em;
+    border-radius: 3px;
+  }
+  nav button:hover {
+    background: #ccc;
+  }
+  nav button.active {
+    background: #efefef;
   }
   select {
     border: none;
@@ -233,7 +300,7 @@
     line-height: 1;
     position: relative;
   }
-  .aside div.warning::after {
+  /* .aside div.warning::after {
     display: block;
     content: "";
     position: absolute;
@@ -243,7 +310,7 @@
     aspect-ratio: 1/1;
     background-size: contain;
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAACnUlEQVR4nOWWS2gTQRzGv6RJE1OSQAwFGyltWjfNqxepULF68ZAeFDF66kGsWDxozbXWoxQtHtWKCrUaDRZFaQVrq94LetCCxUcLRqwPqKAV0hcZ+S87i3F3k127EcSBD2Z3Zr7fzH+ewD+WGgAcA3BUyv+VdATAKgAmaQXA4XJDYwCWd2/1sLnhsKhdrR6CLwGIlBP8eL2ngs3fjTL2qFkU5ekfgIlyQfdSaC8cD8hQrvPdAR72PWZDHQDeROucbOVhXAFeHY+z5qCTwDMAnGaCe2lE42eCCijXk7NBPuoes6ABAAv7tns1oVzJNi+BFwDUmAFOOystbDbdVBL87maYuRxWgg+tFdoKIH+yo7oklKu3o5rAeQDb/hRqBTAZ8NvZj/uxAvO315rY/h1eUTPXCyNBdakNgKeSh+HUSYvlxolaxaieXxL4QmJTVwRFebqnlpcfMAp1A5hrjbhYfkIZzldXQzL49VBIUU5t2uJVVP4JgMcIuN9qAZs816i5iDg4mwmr1nk2sImRB4DTeqF02yweavdpLqDPtyMy+MudiGa9zoSPn+OCHvCo22UVLwAtw28jURn8fSRWtIPeKvEcv1cKupPM+rs2FN0yy2NxtllYJ4ryxeqSl9TJhBbUBmCqoaaSLT4obmZES2NxJmx0EPglALsaOEU9Gz1Vp8uQ38d66pKnNOru36E+APOJFrcuI9rHtgoLs9ssqvtYTYkWN4G/AvD/Cr5IJtODyj2ppheXBRFqBDw9GBLrAxjg0EZ6Q6WSfkNz93E4IspIm1TSz6T3mvhApLjrnq+16MOtcMFcd9HHe40TyExlMzJYfJUGAeTat7jLCs9mwnyB5QDU83k+KP1gZVZO7caql0LQJx3sZqpP8pZH+v+ln3wCWQv5336jAAAAAElFTkSuQmCC");
-  }
+  } */
 
   .loading {
     border: 2px solid #333;

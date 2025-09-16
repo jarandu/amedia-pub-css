@@ -2,6 +2,7 @@ const cssBaseUrl = "https://services.api.no/api/css-config/v1/css-publication-va
 const siteConfigUrl = "https://varnish-local.api.no/gaia/api/public/v1/siteconfig?status=active"
 
 const exclude = [
+  "Avisnavn DK",
   "Salsaposten",
   "Tangotidende",
   "Avisnavn",

@@ -3,9 +3,9 @@
   export let properties = [];
 
   const elements = {
-    background:  "white",
-    buttonBackground: "#ccc",
-    buttonColor: "black",
+    background:  "hvit",
+    buttonBackground: "newspaper-color",
+    buttonColor: "newspaper-color-inverted",
   }
 
   const changeProperty = (e) => {
@@ -52,7 +52,6 @@
       >
       <h2>{publication.name}</h2>
       <button>Trykk på denne</button>
-      <button>Eller trykk på denne</button>
     </div>
   {/each}
 </div>
