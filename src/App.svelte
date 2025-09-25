@@ -3,7 +3,8 @@
   import * as d3 from 'd3';
   import Buttons from "./Buttons.svelte";
   import Scales from "./Scales.svelte";
-  import { getSection, getColorFamily } from "./utils";
+  import { getSection, getColorFamily, colorFields, addHueToPublications } from "./utils";
+  import Maps from "./Maps.svelte";
 
 
   let data;
@@ -56,32 +57,9 @@
   const sections = {
     colors: "Farger",
     scales: "Skaler",
-    buttons: "Knapper"
+    buttons: "Knapper",
+    maps: "Kart"
   }
-  
-  // const colorCheck = (obj, colorName) => {
-  //   const rgbToHex = (r, g, b) => {
-  //     r = r.toString(16);
-  //     g = g.toString(16);
-  //     b = b.toString(16);
-  //     if (r.length == 1) r = "0" + r;
-  //     if (g.length == 1) g = "0" + g;
-  //     if (b.length == 1) b = "0" + b;
-  //     return "#" + r + g + b;
-  //   }
-  //   let color = obj[colorName]
-  //   if (!color) return false
-  //   if (color.startsWith("rgb")) {
-  //     let [r, g, b] = color.match(/\d+/g)
-  //     color = rgbToHex(r, g, b)
-  //   }
-  //   return ![
-  //     '#ffffff',
-  //     'rgb(255,255,255)',
-  //     'rgb(255, 255, 255)',
-  //     obj["newspaper-color"].toLowerCase()
-  //   ].includes(color.toLowerCase())
-  // }
 
   const copy = (event) => {
     let el = event.target
@@ -102,43 +80,16 @@
     return d.toLocaleString('nb-NO', { month: 'short', year: 'numeric', day: 'numeric' })
   }
 
-  const fields = [
-      "newspaper-color",
-      "newspaper-color-inverted",
-      "custom-background-color-one",
-      "custom-background-color-one-front",
-      "custom-background-color-two",
-      "custom-background-color-two-front",
-      "custom-background-color-three",
-      "custom-background-color-three-front",
-      "opinion-background-color",
-      "opinion-color-front",
-    ]
-
-  const getHue = (data) => {
-    const publications = data.publications.map(p => {
-      return {
-        ...p,
-        hue: d3.hsl(p.css["newspaper-color"]).h
-      }
-    });
-    return {
-      ...data,
-      publications
-    };
-  };
-
   onMount(async () => {
     let d;
-    if (window.location.hostname == 'localhost')
+    if (window.location.hostname == 'localhost') {
       d = await import('./assets/local.json');
-    else {
-      const host = window.location.hostname == 'localhost' ? 'http://localhost:3000/' : './'
-      const url = host + 'api/get?fields=' + fields.join(',')
+    } else {
+      const url = './api/get?fields=' + Object.values(colorFields).join(',')
       const res = await fetch(url);
       if (res.ok) d = await res.json();
     }
-    data = getHue(d);
+    data = addHueToPublications(d);
   });
 
   const changeSection = (key) => {
@@ -174,7 +125,7 @@
         <div class=divider>{pub.theme} ({count} publikasjon{count > 1 ? "er" : ""})</div>
         {/if}
         <div class="pub {pub.theme}-theme" style="background: {pub.css["newspaper-color"]}; color: {pub.css["newspaper-color-inverted"]};">
-          <a href="https://{pub.url}" target="_blank">
+          <a href={pub.url} target="_blank">
             <h2>{pub.name}</h2>
           </a>
           {#if sorted != "theme"}{pub.theme.charAt(0).toUpperCase() + pub.theme.slice(1)}{/if}
@@ -191,9 +142,11 @@
       {/each}
     </div>
   {:else if section == "buttons"}
-    <Buttons {publications} properties={fields} />
+    <Buttons {publications} />
   {:else if section == "scales"}
     <Scales {publications} />
+  {:else if section == "maps"}
+    <Maps {publications} />
   {/if}
 {:else}
   <div>Hei! Bare sitt i ro, du. Laster inn tema og css-variabler. Tar cirka 10 sek.</div>

@@ -15,38 +15,38 @@
   let lightnessMax = 95;
   let lightnessMin = 5;
 
-  function generateRandomPoints() {
+  const generateRandomPoints = () => {
     return d3.range(numPolygons).map(() => [
       Math.random() * width * 0.8 + width * 0.1,
       Math.random() * height * 0.8 + height * 0.1,
     ]);
   }
 
-  function generatePolygons() {
+  const generatePolygons = () => {
     const points = generateRandomPoints();
     const delaunay = Delaunay.from(points);
     const voronoi = delaunay.voronoi([0, 0, width, height]);
     polygons = points.map((_, i) => voronoi.cellPolygon(i));
   }
 
-  function generateScale(baseColor, lightnessStart = 90, lightnessEnd = 10, saturationCompensation = 0) {
+  // // input is either hex or rgb, check if values ar the same (has saturation)
+  // const isGreyish = (color) => {
+  //   const values = color.startsWith('#') && color.length == 7 ? color.match(/\w{2}/g) : color.startsWith('#') && color.length == 4 ? color.match(/\w{1}/g) : color.match(/\d+/g);
+  //   return values[0] === values[1] && values[1] === values[2];
+  // }
+
+  const isSaturated = (color) => {
+    return d3.hsl(color).s > 0.05;
+  }
+
+  const generateScale = (baseColor, lightnessStart = 90, lightnessEnd = 10, saturationCompensation = 0) => {
     const hsl = d3.hsl(baseColor);
     return d3.range(numSteps).map((i) => {
       const t = i / (numSteps - 1); // Interpolation factor
       const lightness = lightnessStart + t * (lightnessEnd - lightnessStart);
       return d3.hsl(hsl.h, hsl.s + saturationCompensation / 100, lightness / 100).toString(); // Convert back to string
     });
-  }
-
-  // input is either hex or rgb, check if values ar the same (has saturation)
-  const isGreyish = (color) => {
-    const values = color.startsWith('#') && color.length == 7 ? color.match(/\w{2}/g) : color.startsWith('#') && color.length == 4 ? color.match(/\w{1}/g) : color.match(/\d+/g);
-    return values[0] === values[1] && values[1] === values[2];
-  }
-
-  const isSaturated = (color) => {
-    return d3.hsl(color).s > 0.05;
-  }
+  };
 
   $: items = publications.map((pub) => {
     const baseColor = pub.css[field];

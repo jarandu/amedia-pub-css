@@ -1,9 +1,9 @@
 <script>
+  import { colorFields } from "./utils";
   export let publications = [];
-  export let properties = [];
 
   const elements = {
-    background:  "hvit",
+    background:  "white",
     buttonBackground: "newspaper-color",
     buttonColor: "newspaper-color-inverted",
   }
@@ -12,35 +12,39 @@
     elements[e.target.name] = e.target.value;
   }
 
-  $: properties = [
-    ...properties,
-    'lys grå',
-    'grå',
-    'hvit',
-    'svart',
-  ]
+  const propertyOptions = {
+    ...colorFields,
+    'lys grå': 'light-grey',
+    'grå': 'grey',
+    'hvit': 'white',
+    'svart': 'black',
+  };
 
   $: publications = publications.map((publication) => {
     publication.css = {
       ...publication.css,
-      'lys grå': '#efefef',
-      'grå': '#ccc',
-      'hvit': 'white',
-      'svart': 'black',
+      'light-grey': '#efefef',
+      'grey': '#ccc',
+      'white': 'white',
+      'black': 'black',
     }
     return publication;
   })
 </script>
 
 <nav>
-{#each Object.entries(elements) as [key, value]}
-  <label for="{key}">{key}</label>
-  <select name={key} on:change={changeProperty} {value}>
-    {#each properties as property}
-      <option value={property}>{property}</option>
+  <div>
+    {#each Object.entries(elements) as [key, value]}
+      <label>
+        {key}
+        <select name={key} on:change={changeProperty} {value}>
+          {#each Object.entries(propertyOptions) as [key, value]}
+            <option value={value}>{key}</option>
+          {/each}
+        </select>
+      </label>
     {/each}
-  </select>
-{/each}
+  </div>
 </nav>
 
 <div class="container">
@@ -57,12 +61,16 @@
 </div>
 
 <style>
-  nav {
+  nav div {
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
-    padding: 1em;
-    background: #efefef;
+    padding: 0.5em 1em 1em;
+  }
+  nav label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
   }
   .container {
     display: flex;
