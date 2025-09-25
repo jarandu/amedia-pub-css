@@ -125,7 +125,7 @@
         <div class=divider>{pub.theme} ({count} publikasjon{count > 1 ? "er" : ""})</div>
         {/if}
         <div class="pub {pub.theme}-theme" style="background: {pub.css["newspaper-color"]}; color: {pub.css["newspaper-color-inverted"]};">
-          <a href={pub.url} target="_blank">
+          <a href="https://{pub.url}" target="_blank">
             <h2>{pub.name}</h2>
           </a>
           {#if sorted != "theme"}{pub.theme.charAt(0).toUpperCase() + pub.theme.slice(1)}{/if}
