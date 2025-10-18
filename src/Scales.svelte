@@ -10,7 +10,7 @@
   const height = 800;
   const numPolygons = 20;
   let polygons = [];
-  let field = 'newspaper-color';
+  let field = 'newspaper';
   let saturationCompensation = 0;
   let lightnessMax = 95;
   let lightnessMin = 5;
@@ -50,7 +50,7 @@
 
   $: items = publications.map((pub) => {
     const baseColor = pub.css[field];
-    const color = isSaturated(baseColor) ? baseColor : pub.css['custom-background-color-one'];
+    const color = isSaturated(baseColor) ? baseColor : pub.css['custom-one'];
     const scale = generateScale(color, lightnessMax, lightnessMin, saturationCompensation);
     return { ...pub, scale };
   });

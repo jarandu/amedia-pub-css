@@ -65,9 +65,10 @@ export const addHueToPublications = (data) => {
     ...data,
     publications: data.publications.map(p => {
       if (p.css.hasOwnProperty("newspaper")) {
+        console.log("Hue for", p.name, p.css.newspaper, d3.hsl(p.css.newspaper), d3.hsl(p.css.newspaper).h);
         return {
           ...p,
-          hue: d3.hsl(p.css?.["newspaper"]).h
+          hue: d3.hsl(p.css.newspaper).h
         }
       }
       console.log("No newspaper color found for", p.name);
