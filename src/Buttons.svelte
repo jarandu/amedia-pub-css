@@ -1,11 +1,11 @@
 <script>
-  import { colorFields } from "./utils";
+  import { colors } from "./utils";
   export let publications = [];
 
   const elements = {
     background:  "white",
-    buttonBackground: "newspaper-color",
-    buttonColor: "newspaper-color-inverted",
+    buttonBackground: "newspaper",
+    buttonColor: "newspaper-fg",
   }
 
   const changeProperty = (e) => {
@@ -13,7 +13,7 @@
   }
 
   const propertyOptions = {
-    ...colorFields,
+    ...colors.map((color) => ({ [color.name]: color.css })),
     'lys grå': 'light-grey',
     'grå': 'grey',
     'hvit': 'white',

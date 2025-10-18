@@ -3,7 +3,7 @@
   import * as d3 from 'd3';
   import Buttons from "./Buttons.svelte";
   import Scales from "./Scales.svelte";
-  import { getSection, getColorFamily, colorFields, addHueToPublications } from "./utils";
+  import { getSection, getColorFamily, addHueToPublications } from "./utils";
   import Maps from "./Maps.svelte";
 
 
@@ -21,8 +21,8 @@
       return a.theme.localeCompare(b.theme)
     },
     color: function (a,b) {
-      const colorA = d3.hsl(a.css["newspaper-color"]);
-      const colorB = d3.hsl(b.css["newspaper-color"]);
+      const colorA = d3.hsl(a.css["newspaper"]);
+      const colorB = d3.hsl(b.css["newspaper"]);
       
       // Håndter NaN hue-verdier (grå/svarte farger)
       const hueA = isNaN(colorA.h) ? 0 : colorA.h;
@@ -82,13 +82,13 @@
 
   onMount(async () => {
     let d;
-    if (window.location.hostname == 'localhost') {
-      d = await import('./assets/local.json');
-    } else {
-      const url = './api/get?fields=' + Object.values(colorFields).join(',')
+    // if (window.location.hostname == 'localhost') {
+    //   d = await import('./assets/local.json');
+    // } else {
+      const url = './api/get'
       const res = await fetch(url);
       if (res.ok) d = await res.json();
-    }
+    // }
     data = addHueToPublications(d);
   });
 
@@ -124,19 +124,19 @@
         {@const count = publications.filter(p => p.theme == pub.theme).length}
         <div class=divider>{pub.theme} ({count} publikasjon{count > 1 ? "er" : ""})</div>
         {/if}
-        <div class="pub {pub.theme}-theme" style="background: {pub.css["newspaper-color"]}; color: {pub.css["newspaper-color-inverted"]};">
+        <div class="pub {pub.theme}-theme" style="background: {pub.css["newspaper"]}; color: {pub.css["newspaper-fg"]};">
           <a href="https://{pub.url}" target="_blank">
             <h2>{pub.name}</h2>
           </a>
           {#if sorted != "theme"}{pub.theme.charAt(0).toUpperCase() + pub.theme.slice(1)}{/if}
           <!-- svelte-ignore a11y-click-events-have-key-events -->
           <!-- svelte-ignore a11y-no-static-element-interactions -->
-          <span on:click={(e) => { if (!preventCopy) copy(e) }}>{pub.css["newspaper-color"].toLowerCase()}</span>
+          <span on:click={(e) => { if (!preventCopy) copy(e) }}>{pub.css["newspaper"].toLowerCase()}</span>
           <div class="aside">
-            <div style="background: {pub.css["custom-background-color-one"]}; color: {pub.css["custom-background-color-one-front"]}">1</div>
-            <div style="background: {pub.css["custom-background-color-two"]}; color: {pub.css["custom-background-color-two-front"]}">2</div>
-            <div style="background: {pub.css["custom-background-color-three"]}; color: {pub.css["custom-background-color-three-front"]}">3</div>
-            <div style="background: {pub.css["opinion-background-color"]}; color: {pub.css["opinion-color-front"]}">O</div>
+            <div style="background: {pub.css["custom-one"]}; color: {pub.css["custom-one-fg"]}">1</div>
+            <div style="background: {pub.css["custom-two"]}; color: {pub.css["custom-two-fg"]}">2</div>
+            <div style="background: {pub.css["custom-three"]}; color: {pub.css["custom-three-fg"]}">3</div>
+            <div style="background: {pub.css["opinion"]}; color: {pub.css["opinion-fg"]}">O</div>
           </div>
         </div>
       {/each}
@@ -149,7 +149,7 @@
     <Maps {publications} />
   {/if}
 {:else}
-  <div>Hei! Bare sitt i ro, du. Laster inn tema og css-variabler. Tar cirka 10 sek.</div>
+  <div>Hei! Bare sitt i ro, du. Variablene må lastes på nytt. Dette tar cirka 10 sek.</div>
   <div class="loading">
     <div></div>
   </div>

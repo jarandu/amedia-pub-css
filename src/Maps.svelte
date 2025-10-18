@@ -1,8 +1,9 @@
 <script>
-  import { colorFields } from "./utils";
   import * as d3 from 'd3';
 
   export let publications = [];
+
+  import { colors } from './utils';
 
   let saturationCompensation = 0;
 
@@ -23,7 +24,7 @@
   };
 
   const propertyOptions = {
-    ...colorFields,
+    ...colors.map((color) => ({ [color.name]: color.css })),
     'hvit': 'white',
     'svart': 'black',
   };

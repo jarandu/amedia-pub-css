@@ -1,22 +1,42 @@
 import * as d3 from 'd3';
 
+export const colors = [
+  {
+    name: "Hoved",
+    cetera: 'localcss.menu.background.color',
+    css: 'newspaper',
+  },
+  {
+    name: "Debatt",
+    cetera: 'localcss.opinion.background.color',
+    css: 'opinion',
+  },
+  {
+    name: "Global",
+    cetera: 'localcss.global.background.color',
+    css: 'global',
+  },
+  {
+    name: "Tilpasset 1",
+    cetera: 'localcss.customOne.background.color',
+    css: 'custom-one',
+  },
+  {
+    name: "Tilpasset 2",
+    cetera: 'localcss.customTwo.background.color',
+    css: 'custom-two',
+  },
+  {
+    name: "Tilpasset 3",
+    cetera: 'localcss.customThree.background.color',
+    css: 'custom-three',
+  }
+];
+
 export const getSection = () => {
   const parameters = new URLSearchParams(window.location.search);
   return parameters.get("section") || "colors";
 }
-
-export const colorFields = {
-  "newspaper": "newspaper-color",
-  "newspaper-fg": "newspaper-color-inverted",
-  "custom-one": "custom-background-color-one",
-  "custom-one-fg": "custom-background-color-one-front",
-  "custom-two": "custom-background-color-two",
-  "custom-two-fg": "custom-background-color-two-front",
-  "custom-three": "custom-background-color-three",
-  "custom-three-fg": "custom-background-color-three-front",
-  "opinion": "opinion-background-color",
-  "opinion-fg": "opinion-color-front",
-};
 
 export const getColorFamily = (hue, saturation, lightness) => {
   // Svarte og mørke farger først
@@ -43,9 +63,15 @@ export const getColorFamily = (hue, saturation, lightness) => {
 export const addHueToPublications = (data) => {
   return {
     ...data,
-    publications: data.publications.map(p => ({
-      ...p,
-      hue: d3.hsl(p.css["newspaper-color"]).h
-    }))
+    publications: data.publications.map(p => {
+      if (p.css.hasOwnProperty("newspaper")) {
+        return {
+          ...p,
+          hue: d3.hsl(p.css?.["newspaper"]).h
+        }
+      }
+      console.log("No newspaper color found for", p.name);
+      return p;
+    })
   };
 };
