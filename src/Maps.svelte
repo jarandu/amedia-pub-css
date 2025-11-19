@@ -3,7 +3,7 @@
 
   export let publications = [];
 
-  import { colors } from './utils';
+  import { colors, getColorOptions } from './utils';
 
   let saturationCompensation = 0;
 
@@ -24,7 +24,7 @@
   };
 
   const propertyOptions = {
-    ...colors.map((color) => ({ [color.name]: color.css })),
+    ...getColorOptions(),
     'hvit': 'white',
     'svart': 'black',
   };

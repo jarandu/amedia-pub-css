@@ -33,6 +33,14 @@ export const colors = [
   }
 ];
 
+export const getColorOptions = () => {
+  return colors.reduce((acc, color) => {
+    acc[color.name] = color.css;
+    acc[`${color.name}-fg`] = `${color.css}-fg`;
+    return acc;
+  }, {});
+}
+
 export const getSection = () => {
   const parameters = new URLSearchParams(window.location.search);
   return parameters.get("section") || "colors";
@@ -40,7 +48,7 @@ export const getSection = () => {
 
 export const getColorFamily = (hue, saturation, lightness) => {
   // Svarte og mørke farger først
-  if (lightness < 0.15) return 0; // Svart/mørk
+  if (lightness < 0.1) return 0; // Svart/mørk
   
   // Grå farger
   if (saturation < 0.1) return 1; // Grå
@@ -65,7 +73,6 @@ export const addHueToPublications = (data) => {
     ...data,
     publications: data.publications.map(p => {
       if (p.css.hasOwnProperty("newspaper")) {
-        console.log("Hue for", p.name, p.css.newspaper, d3.hsl(p.css.newspaper), d3.hsl(p.css.newspaper).h);
         return {
           ...p,
           hue: d3.hsl(p.css.newspaper).h

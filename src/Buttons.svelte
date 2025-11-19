@@ -1,6 +1,9 @@
 <script>
-  import { colors } from "./utils";
+  import { colors, getColorOptions } from "./utils";
   export let publications = [];
+
+  console.log("Colors:", colors);
+  console.log('Colors map:', colors.map((color) => ({ [color.name]: color.css })));
 
   const elements = {
     background:  "white",
@@ -13,7 +16,7 @@
   }
 
   const propertyOptions = {
-    ...colors.map((color) => ({ [color.name]: color.css })),
+    ...getColorOptions(),
     'lys grå': 'light-grey',
     'grå': 'grey',
     'hvit': 'white',

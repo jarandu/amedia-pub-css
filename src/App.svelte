@@ -90,6 +90,7 @@
       if (res.ok) d = await res.json();
     // }
     data = addHueToPublications(d);
+    console.log("Data:", data);
   });
 
   const changeSection = (key) => {
