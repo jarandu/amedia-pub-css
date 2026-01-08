@@ -87,6 +87,9 @@
     // } else {
       const force = window.location.search.includes('force=true');
       const url = './api/get' + (force ? '?force=true' : '');
+      if (force) {
+        window.location.search = '';
+      }
       const res = await fetch(url);
       if (res.ok) d = await res.json();
     // }
