@@ -85,7 +85,8 @@
     // if (window.location.hostname == 'localhost') {
     //   d = await import('./assets/local.json');
     // } else {
-      const url = './api/get'
+      const force = window.location.search.includes('force=true');
+      const url = './api/get' + (force ? '?force=true' : '');
       const res = await fetch(url);
       if (res.ok) d = await res.json();
     // }
@@ -116,7 +117,9 @@
         {#each Object.entries(sortOptions) as [key, value]}
           <option value={key}>{value}</option>
         {/each}
-      </select>. Oppdatert {getDate(data.updated)}.</div>
+      </select>. Oppdatert {getDate(data.updated)}.
+      <button on:click={() => { window.location.search = '?force=true' }}>Oppdater nå</button>
+    </div>
   </header>
   {#if section == "colors"}
     <div class="container">
@@ -129,10 +132,11 @@
           <a href="https://{pub.url}" target="_blank">
             <h2>{pub.name}</h2>
           </a>
+          <span>{pub.key} / {pub.escenicKey} (<a class="link" href="https://ece5.api.no/{pub.escenicKey}/cue/#/panel/Search/" target="_blank">Cue</a>)</span>
           {#if sorted != "theme"}{pub.theme.charAt(0).toUpperCase() + pub.theme.slice(1)}{/if}
           <!-- svelte-ignore a11y-click-events-have-key-events -->
           <!-- svelte-ignore a11y-no-static-element-interactions -->
-          <span on:click={(e) => { if (!preventCopy) copy(e) }}>{pub.css["newspaper"].toLowerCase()}</span>
+          <span class="color-code" on:click={(e) => { if (!preventCopy) copy(e) }}>{pub.css["newspaper"].toLowerCase()}</span>
           <div class="aside">
             <div style="background: {pub.css["custom-one"]}; color: {pub.css["custom-one-fg"]}">1</div>
             <div style="background: {pub.css["custom-two"]}; color: {pub.css["custom-two-fg"]}">2</div>
@@ -167,17 +171,17 @@
     display: flex;
     gap: .5em;
   }
-  nav button {
+  header button {
     border: none;
     background: #ddd;
     cursor: pointer;
     padding: 0.25em .6em;
     border-radius: 3px;
   }
-  nav button:hover {
+  header button:hover {
     background: #ccc;
   }
-  nav button.active {
+  header button.active {
     background: #efefef;
   }
   select {
@@ -204,7 +208,6 @@
     position: relative;
     min-width: 280px;
     max-width: 100%;
-    height: 100px;
     flex: 1;
     padding: 1em;
     border-radius: 3px;
@@ -218,10 +221,16 @@
   a:hover {
     text-decoration: underline;
   }
-  span {
+  .link {
+    text-decoration: underline;
+  }
+  .link:hover {
+    text-decoration: none;
+  }
+  .color-code {
     width: fit-content;
   }
-  span:not(.no-deco):hover {
+  .color-code:not(.no-deco):hover {
     cursor: pointer;
     background: white;
     color: black; 

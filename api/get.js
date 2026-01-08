@@ -78,6 +78,8 @@ const getSites = async () => {
       .filter((site) => site.config.hasOwnProperty("theme") && !exclude.includes(site.name.full))
       .map(site => ({
         name: site.name.full,
+        key: site.key,
+        escenicKey: site.config?.escenic?.backendKey,
         url: site.domains.main,
         theme: site.config.theme
       }));
@@ -154,18 +156,19 @@ export default async (req, res) => {
   // Enable cache
   res.setHeader('Cache-Control', 's-maxage=86400') // 24 hours
 
-  const { blobs } = await list();
-  const saved = blobs.find(b => b.pathname === "publications.json");
-
-  console.log("Saved:", saved);
-  
-  // If the file is less than 24 hours old, use the saved data
-  if (saved && saved.uploadedAt > new Date().getTime() - 86_400_000) {
-    const savedData = await fetch(saved.downloadUrl);
-    const savedDataJson = await savedData.json();
-    console.log("Using saved data")
-    res.status(200).send(savedDataJson);
-    return;
+  const force = req.query.force === 'true';
+  if (!force) {
+    const { blobs } = await list();
+    const saved = blobs.find(b => b.pathname === "publications.json");
+    
+    // If the file is less than 24 hours old, use the saved data
+    if (saved && saved.uploadedAt > new Date().getTime() - 86_400_000) {
+      const savedData = await fetch(saved.downloadUrl);
+      const savedDataJson = await savedData.json();
+      console.log("Using saved data")
+      res.status(200).send(savedDataJson);
+      return;
+    }
   }
 
   console.log('Getting Gaia properties...');
